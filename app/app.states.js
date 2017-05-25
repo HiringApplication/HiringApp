@@ -210,6 +210,7 @@ altairApp
                             return $ocLazyLoad.load([
                                 'lazy_parsleyjs',
                                 'lazy_wizard',
+                                'assets/js/custom/uikit_fileinput.min.js',
                                 'app/components/forms/wizardController.js'
                             ], {serie:true});
                         }]

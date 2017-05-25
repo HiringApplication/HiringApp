@@ -70,60 +70,13 @@ angular
                 },
                 {
                     id: 1,
-                    title: 'Mailbox',
-                    icon: '&#xE158;',
-                    link: 'restricted.pages.mailbox'
-                },
-                {
-                    id: 2,
-                    title: 'Invoices',
-                    icon: '&#xE53E;',
-                    link: 'restricted.pages.invoices.list'
-                },
-                {
-                    id: 3,
-                    title: 'Chats',
-                    icon: '&#xE0B9;',
-                    submenu: [
-                        {
-                            title: 'Regular Chat',
-                            link: 'restricted.pages.chat'
-                        },
-                        {
-                            title: 'Chatboxes',
-                            link: 'restricted.pages.chatboxes'
-                        }
-                    ]
-                },
-                {
-                    id: 4,
-                    title: 'Scrum Board',
-                    icon: '&#xE85C;',
-                    link: 'restricted.pages.scrum_board'
-                },
-                {
-                    id: 5,
-                    title: 'Snippets',
-                    icon: '&#xE86F;',
-                    link: 'restricted.pages.snippets'
-                },
-                {
-                    id: 6,
-                    title: 'User Profile',
-                    icon: '&#xE87C;',
-                    link: 'restricted.pages.user_profile'
-                },
-                {
-                    id: 15,
-                    title: 'Sticky Notes',
-                    icon: '&#xE8F0;',
-                    link: 'restricted.pages.sticky_notes'
-                },
-                {
-                    id: 7,
                     title: 'Forms',
                     icon: '&#xE8D2;',
                     submenu: [
+                        {
+                            title: 'Registration',
+                            link: 'restricted.forms.wizard'
+                        },
                         {
                             title: 'Regular Elements',
                             link: 'restricted.forms.regular'
@@ -148,10 +101,7 @@ angular
                             title: 'Validation',
                             link: 'restricted.forms.validation'
                         },
-                        {
-                            title: 'Wizard',
-                            link: 'restricted.forms.wizard'
-                        },
+                        
                         {
                             title: 'CKeditor',
                             link: 'restricted.forms.wysiwyg_ckeditor',
@@ -166,6 +116,57 @@ angular
                             link: 'restricted.forms.wysiwyg_tinymce'
                         }
                     ]
+                },
+                 {
+                    id: 2,
+                    title: 'Mailbox',
+                    icon: '&#xE158;',
+                    link: 'restricted.pages.mailbox'
+                },
+                {
+                    id: 3,
+                    title: 'Invoices',
+                    icon: '&#xE53E;',
+                    link: 'restricted.pages.invoices.list'
+                },
+                {
+                    id: 4,
+                    title: 'Chats',
+                    icon: '&#xE0B9;',
+                    submenu: [
+                        {
+                            title: 'Regular Chat',
+                            link: 'restricted.pages.chat'
+                        },
+                        {
+                            title: 'Chatboxes',
+                            link: 'restricted.pages.chatboxes'
+                        }
+                    ]
+                },
+                {
+                    id: 5,
+                    title: 'Scrum Board',
+                    icon: '&#xE85C;',
+                    link: 'restricted.pages.scrum_board'
+                },
+                {
+                    id: 6,
+                    title: 'Snippets',
+                    icon: '&#xE86F;',
+                    link: 'restricted.pages.snippets'
+                },
+                {
+                    id: 7,
+                    title: 'User Profile',
+                    icon: '&#xE87C;',
+                    link: 'restricted.pages.user_profile'
+                },
+                {
+                    id: 15,
+                    title: 'Sticky Notes',
+                    icon: '&#xE8F0;',
+                    link: 'restricted.pages.sticky_notes'
                 },
                 {
                     id: 8,

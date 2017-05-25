@@ -38,9 +38,9 @@
                         </div>
                         <div class="user_content">
                             <ul id="user_edit_tabs" class="uk-tab" data-uk-tab="{connect:'#user_edit_tabs_content'}">
-                                <li class="uk-active"><a href="#">Basic</a></li>
-                                <li><a href="#">Groups</a></li>
-                                <li><a href="#">Todo</a></li>
+                                <li class="uk-active"><a href="#">Personal Details</a></li>
+                                <li><a href="#">Education Details</a></li>
+                                <li><a href="#">Additional Details</a></li>
                             </ul>
                             <ul id="user_edit_tabs_content" class="uk-switcher uk-margin">
                                 <li>
@@ -50,28 +50,28 @@
                                         </h3>
                                         <div class="uk-grid" data-uk-grid-margin>
                                             <div class="uk-width-medium-1-2">
-                                                <label for="user_edit_uname_control">User name</label>
+                                                <label for="user_edit_uname_control">Candidate Name</label>
                                                 <input class="md-input" type="text" id="user_edit_uname_control" name="user_edit_uname_control" ng-model="user_data.name" md-input />
                                             </div>
                                             <div class="uk-width-medium-1-2">
-                                                <label for="user_edit_position_control">User position</label>
+                                                <label for="user_edit_position_control">Degree & Course</label>
                                                 <input class="md-input" type="text" id="user_edit_position_control" name="user_edit_position_control" ng-model="user_data.position" md-input />
                                             </div>
                                         </div>
-                                        <div class="uk-grid">
+                                       <!--  <div class="uk-grid">
                                             <div class="uk-width-1-1">
                                                 <label for="user_edit_personal_info_control">About</label>
                                                 <textarea class="md-input" name="user_edit_personal_info_control" id="user_edit_personal_info_control" cols="30" rows="6" ng-model="user_data.about" md-input textarea-autosize>{{user_data.about}}</textarea>
                                             </div>
-                                        </div>
-                                        <h3 class="full_width_in_card heading_c">
+                                        </div> -->
+                                        <!-- <h3 class="full_width_in_card heading_c">
                                             Languages
                                         </h3>
                                         <div class="uk-grid" data-uk-grid-margin>
                                             <div class="uk-width-1-1">
                                                 <selectize config="user_languages_config" options="user_languages_options" ng-model="user_data.languages" position="bottom" id="user_edit_languages" name="user_edit_languages"></selectize>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <h3 class="full_width_in_card heading_c">
                                             Contact info
                                         </h3>
@@ -92,53 +92,322 @@
                                                             <span class="uk-input-group-addon">
                                                                 <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
                                                             </span>
-                                                            <label>Phone Number</label>
+                                                            <label>Contact Number</label>
                                                             <input type="text" class="md-input" name="user_edit_phone" ng-model="user_data_contacts.phone" md-input />
                                                         </div>
                                                     </div>
                                                     <div>
                                                         <div class="uk-input-group">
                                                             <span class="uk-input-group-addon">
-                                                                <i class="md-list-addon-icon uk-icon-facebook-official"></i>
+                                                                <i class="md-list-addon-icon uk-icon-map"></i>
                                                             </span>
-                                                            <label>Facebook</label>
+                                                            <label>Address</label>
                                                             <input type="text" class="md-input" name="user_edit_facebook" ng-model="user_data_contacts.fb" md-input />
                                                         </div>
                                                     </div>
                                                     <div>
                                                         <div class="uk-input-group">
                                                             <span class="uk-input-group-addon">
-                                                                <i class="md-list-addon-icon uk-icon-twitter"></i>
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
                                                             </span>
-                                                            <label>Twitter</label>
+                                                            <label>City</label>
                                                             <input type="text" class="md-input" name="user_edit_twitter" ng-model="user_data_contacts.twitter" md-input />
                                                         </div>
                                                     </div>
                                                     <div>
                                                         <div class="uk-input-group">
                                                             <span class="uk-input-group-addon">
-                                                                <i class="md-list-addon-icon uk-icon-linkedin"></i>
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
                                                             </span>
-                                                            <label>Linkdin</label>
+                                                            <label>Pincode</label>
                                                             <input type="text" class="md-input" name="user_edit_linkdin" ng-model="user_data_contacts.linkdin" md-input />
                                                         </div>
-                                                    </div>
-                                                    <div>
-                                                        <div class="uk-input-group">
-                                                            <span class="uk-input-group-addon">
-                                                                <i class="md-list-addon-icon uk-icon-google-plus"></i>
-                                                            </span>
-                                                            <label>Google+</label>
-                                                            <input type="text" class="md-input" name="user_edit_google_plus" ng-model="user_data_contacts.g_plus" md-input />
-                                                        </div>
-                                                    </div>
+                                                    </div>                           
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <p class="uk-text-muted uk-text-small">Move the draggable group by clicking and holding handler and drag it to other list.</p>
+                                    <div class="uk-margin-top">         
+                                        <h3 class="full_width_in_card heading_c">
+                                            Contact info
+                                        </h3>
+                                        <div class="uk-grid">
+                                            <div class="uk-width-1-1">
+                                                <div class="uk-grid uk-grid-width-1-1 uk-grid-width-large-1-2" data-uk-grid-margin>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                            </span>
+                                                            <label>Email</label>
+                                                            <input type="text" class="md-input" name="user_edit_email" ng-model="user_data_contacts.email" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                            </span>
+                                                            <label>Contact Number</label>
+                                                            <input type="text" class="md-input" name="user_edit_phone" ng-model="user_data_contacts.phone" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map"></i>
+                                                            </span>
+                                                            <label>Address</label>
+                                                            <input type="text" class="md-input" name="user_edit_facebook" ng-model="user_data_contacts.fb" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>City</label>
+                                                            <input type="text" class="md-input" name="user_edit_twitter" ng-model="user_data_contacts.twitter" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>Pincode</label>
+                                                            <input type="text" class="md-input" name="user_edit_linkdin" ng-model="user_data_contacts.linkdin" md-input />
+                                                        </div>
+                                                    </div>                           
+                                                </div>
+                                            </div>
+                                        </div>
+                                              <h3 class="full_width_in_card heading_c">
+                                            Contact info
+                                        </h3>
+                                        <div class="uk-grid">
+                                            <div class="uk-width-1-1">
+                                                <div class="uk-grid uk-grid-width-1-1 uk-grid-width-large-1-2" data-uk-grid-margin>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                            </span>
+                                                            <label>Email</label>
+                                                            <input type="text" class="md-input" name="user_edit_email" ng-model="user_data_contacts.email" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                            </span>
+                                                            <label>Contact Number</label>
+                                                            <input type="text" class="md-input" name="user_edit_phone" ng-model="user_data_contacts.phone" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map"></i>
+                                                            </span>
+                                                            <label>Address</label>
+                                                            <input type="text" class="md-input" name="user_edit_facebook" ng-model="user_data_contacts.fb" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>City</label>
+                                                            <input type="text" class="md-input" name="user_edit_twitter" ng-model="user_data_contacts.twitter" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>Pincode</label>
+                                                            <input type="text" class="md-input" name="user_edit_linkdin" ng-model="user_data_contacts.linkdin" md-input />
+                                                        </div>
+                                                    </div>                           
+                                                </div>
+                                            </div>
+                                        </div>
+                                              <h3 class="full_width_in_card heading_c">
+                                            Contact info
+                                        </h3>
+                                        <div class="uk-grid">
+                                            <div class="uk-width-1-1">
+                                                <div class="uk-grid uk-grid-width-1-1 uk-grid-width-large-1-2" data-uk-grid-margin>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                            </span>
+                                                            <label>Email</label>
+                                                            <input type="text" class="md-input" name="user_edit_email" ng-model="user_data_contacts.email" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                            </span>
+                                                            <label>Contact Number</label>
+                                                            <input type="text" class="md-input" name="user_edit_phone" ng-model="user_data_contacts.phone" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map"></i>
+                                                            </span>
+                                                            <label>Address</label>
+                                                            <input type="text" class="md-input" name="user_edit_facebook" ng-model="user_data_contacts.fb" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>City</label>
+                                                            <input type="text" class="md-input" name="user_edit_twitter" ng-model="user_data_contacts.twitter" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>Pincode</label>
+                                                            <input type="text" class="md-input" name="user_edit_linkdin" ng-model="user_data_contacts.linkdin" md-input />
+                                                        </div>
+                                                    </div>                           
+                                                </div>
+                                            </div>
+                                        </div>
+                                              <h3 class="full_width_in_card heading_c">
+                                            Contact info
+                                        </h3>
+                                        <div class="uk-grid">
+                                            <div class="uk-width-1-1">
+                                                <div class="uk-grid uk-grid-width-1-1 uk-grid-width-large-1-2" data-uk-grid-margin>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                            </span>
+                                                            <label>Email</label>
+                                                            <input type="text" class="md-input" name="user_edit_email" ng-model="user_data_contacts.email" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                            </span>
+                                                            <label>Contact Number</label>
+                                                            <input type="text" class="md-input" name="user_edit_phone" ng-model="user_data_contacts.phone" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map"></i>
+                                                            </span>
+                                                            <label>Address</label>
+                                                            <input type="text" class="md-input" name="user_edit_facebook" ng-model="user_data_contacts.fb" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>City</label>
+                                                            <input type="text" class="md-input" name="user_edit_twitter" ng-model="user_data_contacts.twitter" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>Pincode</label>
+                                                            <input type="text" class="md-input" name="user_edit_linkdin" ng-model="user_data_contacts.linkdin" md-input />
+                                                        </div>
+                                                    </div>                           
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                 <li>
+                                    <div class="uk-margin-top">               
+                                        <h3 class="full_width_in_card heading_c">
+                                            Contact info
+                                        </h3>
+                                        <div class="uk-grid">
+                                            <div class="uk-width-1-1">
+                                                <div class="uk-grid uk-grid-width-1-1 uk-grid-width-large-1-2" data-uk-grid-margin>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                            </span>
+                                                            <label>Email</label>
+                                                            <input type="text" class="md-input" name="user_edit_email" ng-model="user_data_contacts.email" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                            </span>
+                                                            <label>Contact Number</label>
+                                                            <input type="text" class="md-input" name="user_edit_phone" ng-model="user_data_contacts.phone" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map"></i>
+                                                            </span>
+                                                            <label>Address</label>
+                                                            <input type="text" class="md-input" name="user_edit_facebook" ng-model="user_data_contacts.fb" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>City</label>
+                                                            <input type="text" class="md-input" name="user_edit_twitter" ng-model="user_data_contacts.twitter" md-input />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="uk-input-group">
+                                                            <span class="uk-input-group-addon">
+                                                                <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                            </span>
+                                                            <label>Pincode</label>
+                                                            <input type="text" class="md-input" name="user_edit_linkdin" ng-model="user_data_contacts.linkdin" md-input />
+                                                        </div>
+                                                    </div>                           
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                   
                                     <div class="uk-grid" data-uk-grid-margin>
                                         <div class="uk-width-medium-1-2">
                                             <h4 class="heading_c uk-margin-small-bottom">My groups</h4>
