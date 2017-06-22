@@ -1,0 +1,594 @@
+<div id="page_content">
+    <div id="page_content_inner">
+
+        <div class="md-card uk-margin-large-bottom">
+            <div class="md-card-content">
+             <!--     <form id="basicview"> -->
+                       <form id="basicview" class="uk-form-stacked">
+                    <wizard on-finish="finishedWizard()" template="app/templates/wizard.tpl.html">
+                        <wz-step wz-title="Personal details" template="app/templates/wizard.step.tpl.html">
+                       
+                            <h2 class="heading_a">
+                                Personal details
+                            </h2>
+                            <hr class="md-hr"/>
+                            <div class="uk-grid">
+                                <div class="uk-width-medium-1-4 parsley-row">
+                                    <label for="wizard_firstname">First Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_firstname" id="wizard_firstname" required class="md-input"  md-input ng-model="wizard.w1_firstname" />
+                                </div>
+                                <div class="uk-width-medium-1-4 parsley-row">
+                                    <label for="wizard_lastname">Last Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_lastname" id="wizard_lastname" required class="md-input"  md-input ng-model="wizard.w1_lastname" />
+                                </div>
+                                 <div class="uk-width-medium-1-4 parsley-row">
+                                    <div class="md-input-wrapper"><label for="dob">Date of Birth<span class="req">*</span></label><input name="dob" id="dob" required="" class="md-input ng-pristine ng-isolate-scope ng-empty ng-invalid ng-invalid-required md-input-processed ng-touched" data-parsley-americandate="" data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'MM.DD.YYYY'}" md-input="" ng-model="dob" type="text"><span class="md-input-bar "></span></div>
+                                </div>
+                                 <div class="uk-width-medium-1-4 parsley-row">
+                                <input config="gender_val_config" options="gender_val_options" ng-model="gender"  required name="val_select" selectize />
+                                </div>
+                            </div>
+                            <div class="uk-grid">
+                                <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_address">Father's Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_address" id="wizard_address" required class="md-input" md-input ng-model="wizard.w1_address" />
+                                </div>
+                                 <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_city">Mother's Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_city" id="wizard_city" required class="md-input" md-input ng-model="wizard.w1_city" />
+                                </div>
+                                <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_city">Contact<span class="req">*</span></label>
+                                    <input type="text" name="wizard_city" id="wizard_city" required class="md-input" md-input ng-model="wizard.w1_city" />
+                                </div>
+                                
+                                <div class="uk-width-medium-1-5 parsley-row">
+                                    <div class="md-card">
+                                            <div class="user_heading_avatar fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail">
+                                                    <img ng-src="assets/img/file.png" alt="user avatar"/>
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                <div class="user_avatar_controls">
+                                                        <span class="btn-file">
+                                                            <span class="fileinput-new"><i class="material-icons">&#xE2C6;</i></span>
+                                                            <span class="fileinput-exists"><i class="material-icons">&#xE86A;</i></span>
+                                                            <input type="file" name="user_edit_avatar_control" id="user_edit_avatar_control">
+                                                        </span>
+                                                    <a href="#" class="btn-file fileinput-exists" data-dismiss="fileinput"><i class="material-icons">&#xE5CD;</i></a>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                     </div>
+                                                <div class="uk-width-medium-1-5 parsley-row">
+                                    <div class="md-card">
+                                            <div class="user_heading_avatar fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail">
+                                                    <img ng-src="assets/img/avatars/user.png" alt="user avatar"/>
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                <div class="user_avatar_controls">
+                                                        <span class="btn-file">
+                                                            <span class="fileinput-new"><i class="material-icons">&#xE2C6;</i></span>
+                                                            <span class="fileinput-exists"><i class="material-icons">&#xE86A;</i></span>
+                                                            <input type="file" name="user_edit_avatar_control" id="user_edit_avatar_control">
+                                                        </span>
+                                                    <a href="#" class="btn-file fileinput-exists" data-dismiss="fileinput"><i class="material-icons">&#xE5CD;</i></a>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                     </div>
+                               <!--   </div> -->
+                                     
+                                </div>
+
+
+                                <div class="uk-grid">
+                                <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_address">Address<span class="req">*</span></label>
+                                    <input type="text" name="wizard_address" id="wizard_address" required class="md-input" md-input ng-model="wizard.w1_address" />
+                                </div>
+                                 <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_city">City<span class="req">*</span></label>
+                                    <input type="text" name="wizard_city" id="wizard_city" required class="md-input" md-input ng-model="wizard.w1_city" />
+                                </div>
+                                 <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_address">State<span class="req">*</span></label>
+                                    <input type="text" name="wizard_address" id="wizard_address" required class="md-input" md-input ng-model="wizard.w1_address" />
+                                </div>
+                                <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_address">Pincode<span class="req">*</span></label>
+                                    <input type="text" name="wizard_address" id="wizard_address" required class="md-input" md-input ng-model="wizard.w1_address" />
+                                </div>
+                                <div class="uk-width-medium-1-5 parsley-row">
+                                    <label for="wizard_address">Country<span class="req">*</span></label>
+                                    <input type="text" name="wizard_address" id="wizard_address" required class="md-input" md-input ng-model="wizard.w1_address" />
+                                </div>
+                                 
+                                 
+                                     
+                                </div>
+
+
+                                <div class="uk-grid">
+                                    <div class="uk-width-medium-1-3 parsley-row">
+                                        <label for="wizard_pincode">Nationality<span class="req">*</span></label>
+                                        <input type="text" name="wizard_pincode" id="wizard_pincode" required class="md-input" md-input ng-model="wizard.w1_pincode" />
+                                    </div>
+                                    <div class="uk-width-medium-1-3 parsley-row">
+                                        <label for="wizard_contact">Religion<span class="req">*</span></label>
+                                        <input type="text" name="wizard_contact" id="wizard_contact" required class="md-input" md-input ng-model="wizard.w1_contact" />
+                                    </div>
+                                    <div class="uk-width-medium-1-3 parsley-row">
+                                        <label for="wizard_language">Languages Known<span class="req">*</span></label>
+                                        <input type="text" name="wizard_language" id="wizard_language" required class="md-input" md-input ng-model="wizard.w1_language" />
+                                    </div>
+                            </div>
+
+
+                            
+
+
+                            <div class="uk-clearfix uk-margin-large-top">
+                                <button class="md-btn md-btn-primary uk-float-right" type="submit" wz-next >Continue</button> 
+                            </div>
+                     
+                        </wz-step>
+                        <wz-step  wz-title="Educational Details" template="app/templates/wizard.step.tpl.html">
+                       <!--   <form id="wizard_advanced_form" class="uk-form-stacked"> -->
+                            <h2 class="heading_a">
+                                Educational Details
+                            </h2>
+                            
+                            <hr class="md-hr"/>
+                            <!-- <div class="uk-grid uk-grid-width-large-1-2 uk-grid-width-xlarge-1-4" data-uk-grid-margin>
+                                <div class="parsley-row">
+                                    <label for="wizard_institutionname1">Institution Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_institutionname1" id="wizard_institutionname1" required class="md-input" md-input ng-model="wizard.w1_institutionname1" />
+                                </div>
+                                <div class="parsley-row">
+                                <input config="selectize_val_config" options="selectize_val_options" ng-model="validation_form.selectize_heard"  required name="val_select" selectize />
+                          
+                                </div>
+                                <div class="parsley-row">
+                                    <label for="wizard_percentage1">Percentage<span class="req">*</span></label>
+                                    <input type="text" name="wizard_percentage1" id="wizard_percentage1" required class="md-input"  md-input ng-model="wizard.w1_percentage1" />
+                                </div>
+                                <div class="parsley-row">
+                                    <label for="wizard_passedout1">Year of Passing<span class="req">*</span></label>
+                                    <input type="text" name="wizard_passedout1" id="wizard_passedout1" required class="md-input" data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'MM.DD.YYYY'}" md-input ng-model="wizard.w1_passedout1" />
+                                </div>
+                            </div> -->
+
+
+                            <div class="uk-grid uk-grid-medium " data-uk-grid-match ng-repeat="(topParent,section) in form_dynamic track by $index">
+                                <div class="uk-width-8-10 uk-width-medium-9-10">
+                                    <div class="uk-grid" ng-repeat="fields in section" on-last-repeat>
+                                        
+                                        <div class="uk-width-2-6" ng-if="$parent.$index == 1" ng-repeat="input in fields" >
+                                            <div class="parsley-row">
+                                                <label>Institution Name</label>
+                                                <input type="{{ input.type }}" ng-model="form_dynamic_model[topParent][input.name]" class="md-input" required md-input>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-6" ng-if="$parent.$index == 1" ng-repeat="input in fields" >
+                                            <div class="parsley-row">
+                                                <input config="course_val_config" options="course_val_options" ng-model="gender"  required name="val_select" selectize />
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-6" ng-if="$parent.$index == 1" ng-repeat="input in fields" >
+                                            <div class="parsley-row">
+                                                <input config="department_val_config" options="department_val_options" ng-model="gender"  required name="val_select" selectize />
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-6" ng-if="$parent.$index == 1" ng-repeat="input in fields" >
+                                            <div class="parsley-row">
+                                                <label>Percentage/GPA</label>
+                                                <input type="{{ input.type }}"  class="md-input" required md-input>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-6" ng-if="$parent.$index == 1" ng-repeat="input in fields" >
+                                            <div class="parsley-row">
+                                                <label>Year Of Passing</label>
+                                                <input type="{{ input.type }}"  class="md-input" required md-input>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 2" ng-repeat="field in fields">
+                                            <div class="parsley-row" ng-if="field.type == 'radio'">
+                                                <label>{{field.label}}:</label>
+                                                <div class="dynamic_radio uk-margin-small-top">
+                                                    <span class="icheck-inline" ng-repeat="input in field.inputs">
+                                                        <input type="radio" id="{{field.name}}_{{ topParent }}_{{$index}}" ng-model="form_dynamic_model[topParent][field.name]" value="{{input.value}}" icheck required/>
+                                                        <label for="{{field.name}}_{{ topParent }}_{{$index}}" class="inline-label">{{ input.label }}</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div ng-if="field.type == 'switch'">
+                                                <label>{{field.label}}:</label>
+                                                <div class="uk-margin-small-top">
+                                                    <div class="parsley-row" ng-repeat="input in field.inputs">
+                                                        <input type="checkbox" id="{{input.name}}_{{ topParent }}_{{$index}}" name="{{input.name}}_{{ topParent }}_{{$index}}" ng-model="form_dynamic_model[topParent][input.name]" ui-switch/>
+                                                        <label for="{{input.name}}_{{ topParent }}_{{$index}}" class="inline-label">{{input.label}}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 3" ng-repeat="input in fields" >
+                                            <div class="parsley-row" ng-class="{ 'uk-margin-small-top' : input.position }">
+                                                <input type="text" config="input.config" options="input.data" ng-model="form_dynamic_model[topParent][input.name]" position="bottom" selectize ng-if="input.position">
+                                                <input type="text" config="input.config" options="input.data" ng-model="form_dynamic_model[topParent][input.name]" selectize ng-if="!input.position">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-width-2-10 uk-width-medium-1-10 uk-text-center">
+                                    <div class="uk-vertical-align uk-height-1-1">
+                                        <div class="uk-vertical-align-middle">
+                                            <a href="javascript:void(0)" ng-click="cloneSection($event,$index)" ng-if="$last"><i class="material-icons md-36">&#xE146;</i></a>
+                                            <a href="javascript:void(0)" ng-click="deleteSection($event,$index)" ng-if="!$last"><i class="material-icons md-36">&#xE872;</i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- <h4>HSC/Diplomo details</h4>
+                            <hr class="md-hr"/>
+                            <div class="uk-grid uk-grid-width-large-1-2 uk-grid-width-xlarge-1-4" data-uk-grid-margin>
+                                <div class="parsley-row">
+                                    <label for="wizard_institutionname2">Institution Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_institutionname2" id="wizard_institutionname2" required class="md-input" md-input ng-model="wizard.w1_institutionname2" />
+                                </div>
+                                 <div class="parsley-row">
+                                    <label for="wizard_department2">Department<span class="req">*</span></label>
+                                    <input type="text" name="wizard_department2" id="wizard_department2" required class="md-input" md-input ng-model="wizard.w1_department2" />
+                                </div>
+                               
+                                <div class="parsley-row">
+                                    <label for="wizard_percentage2">Percentage<span class="req">*</span></label>
+                                    <input type="text" name="wizard_percentage2" id="wizard_percentage2" required class="md-input"  md-input ng-model="wizard.w1_percentage2" />
+                                </div>
+                                <div class="parsley-row">
+                                    <label for="wizard_passedout2">Year of Passing<span class="req">*</span></label>
+                                    <input type="text" name="wizard_passedout2" id="wizard_passedout2" required class="md-input" data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'MM.DD.YYYY'}" md-input ng-model="wizard.w1_passedout2" />
+                                </div>
+                            </div> -->
+                             <!-- <h4>UG details</h4>
+                            <hr class="md-hr"/>
+                            <div class="uk-grid uk-grid-width-large-1-2 uk-grid-width-xlarge-1-4" data-uk-grid-margin>
+                                <div class="parsley-row">
+                                    <label for="wizard_institutionname3">Institution Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_institutionname3" id="wizard_institutionname3" required class="md-input" md-input ng-model="wizard.w1_institutionname3" />
+                                </div>
+                                 <div class="parsley-row">
+                                    <label for="wizard_department3">Department<span class="req">*</span></label>
+                                    <input type="text" name="wizard_department3" id="wizard_department3" required class="md-input" md-input ng-model="wizard.w1_department3" />
+                                </div>
+                                <div class="parsley-row">
+                                    <label for="wizard_percentage3">Percentage<span class="req">*</span></label>
+                                    <input type="text" name="wizard_percentage3" id="wizard_percentage3" required class="md-input"  md-input ng-model="wizard.w1_percentage3" />
+                                </div>
+                                <div class="parsley-row">
+                                    <label for="wizard_passedout3">Year of Passing<span class="req">*</span></label>
+                                    <input type="text" name="wizard_passedout3" id="wizard_passedout3" required class="md-input" data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'MM.DD.YYYY'}" md-input ng-model="wizard.w1_passedout3" />
+                                </div>
+                            </div>
+                             <h4>PG details</h4>
+                            <hr class="md-hr"/>
+                            <div class="uk-grid uk-grid-width-large-1-2 uk-grid-width-xlarge-1-4" data-uk-grid-margin>
+                                <div class="parsley-row">
+                                    <label for="wizard_institutionname4">Institution Name<span class="req">*</span></label>
+                                    <input type="text" name="wizard_institutionname4" id="wizard_institutionname4" required class="md-input" md-input ng-model="wizard.w1_institutionname4" />
+                                </div>
+                                 <div class="parsley-row">
+                                    <label for="wizard_department4">Department<span class="req">*</span></label>
+                                    <input type="text" name="wizard_department4" id="wizard_department4" required class="md-input" md-input ng-model="wizard.w1_department4" />
+                                </div>
+                                <div class="parsley-row">
+                                    <label for="wizard_percentage4">Percentage<span class="req">*</span></label>
+                                    <input type="text" name="wizard_percentage4" id="wizard_percentage4" required class="md-input"  md-input ng-model="wizard.w1_percentage4" />
+                                </div>
+                                <div class="parsley-row">
+                                    <label for="wizard_passedout4">Year of Passing<span class="req">*</span></label>
+                                    <input type="text" name="wizard_passedout4" id="wizard_passedout4" required class="md-input" data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'MM.DD.YYYY'}" md-input ng-model="wizard.w1_passedout4" />
+                                </div>
+                            </div> -->
+                            <div class="uk-clearfix uk-margin-large-top uk-margin-large-bottom">
+                                <button class="md-btn md-btn-flat md-btn-flat-primary uk-float-left" type="submit" wz-previous>Back</button>
+                                <button class="md-btn md-btn-primary uk-float-right" type="submit" wz-next >Continue</button>
+                            </div>
+                     <!--    </form> -->
+                        </wz-step>
+                        <wz-step wz-title="Additional information" template="app/templates/wizard.step.tpl.html">
+                         <!--  <form id="wizard_advanced_form" class="uk-form-stacked"> -->
+                            <!-- <h2 class="heading_a">Additional information</h2> -->
+                            <h4>Working Experience</h4>
+                            
+                            <div class="uk-grid" data-uk-grid-margin>
+                                <div class="uk-width-large-1-1">                    
+                                                <div class="uk-grid uk-grid-medium " data-uk-grid-match ng-repeat="(topParent,section) in form_dynamicwork track by $index">
+                                                    <div class="uk-width-1-2 uk-width-medium-9-10">
+                                                        <div class="uk-grid" ng-repeat="fields in section" on-last-repeat>
+                                                            <!-- <div class="uk-width-1-1" ng-if="$parent.$index == 0" ng-repeat="input in fields" >
+                                                                 <div class="parsley-row">
+                                                                    <label for="wizard_companyname">Company Name<span class="req">*</span></label>
+                                                                   <input type="text" name="wizard_companyname" id="wizard_companyname" required class="md-input" md-input ng-model="wizard.w1_companyname" />
+                                                                </div>
+                                                            </div> -->
+                                                             <div class="uk-width-medium-1-3" ng-if="$parent.$index == 1" ng-repeat="input in fields">
+                                                                <div class="parsley-row">
+                                                                    <label for="wizard_role">Company<span class="req">*</span></label>
+                                                                   <input type="text" name="wizard_role" id="wizard_role" required class="md-input" md-input ng-model="wizard.w1_role" />
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="uk-width-medium-1-3" ng-if="$parent.$index == 1" ng-repeat="input in fields">
+                                                                <div class="parsley-row">
+                                                                    <label for="wizard_year">Role<span class="req">*</span></label>
+                                                                   <input type="text" name="wizard_year" id="wizard_year" required class="md-input" md-input ng-model="wizard.w1_year" />
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="uk-width-medium-1-3" ng-if="$parent.$index == 1" ng-repeat="input in fields">
+                                                                <div class="parsley-row">
+                                                                    <label for="wizard_year">Duration<span class="req">*</span></label>
+                                                                   <input type="text" name="wizard_year" id="wizard_year" required class="md-input" md-input ng-model="wizard.w1_year" />
+                                                                </div>
+                                                                
+                                                            </div>
+                                                             
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-2-10 uk-width-medium-1-10 uk-text-center">
+                                                        <div class="uk-vertical-align uk-height-1-1">
+                                                            <div class="uk-vertical-align-middle">
+                                                                <a href="javascript:void(0)" ng-click="cloneSectionwork($event,$index)" ng-if="$last"><i class="material-icons md-36">&#xE146;</i></a>
+                                                                <a href="javascript:void(0)" ng-click="deleteSectionwork($event,$index)" ng-if="!$last"><i class="material-icons md-36">&#xE872;</i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                        </div>
+                            </div>
+                            <div class="uk-clearfix uk-margin-large-top">
+                                <button class="md-btn md-btn-flat md-btn-flat-primary uk-float-left" type="submit" wz-previous>Back</button>
+                                <button class="md-btn md-btn-primary uk-float-right" type="submit" wz-next >Submit</button>
+                            </div>
+                            <!--  </form> -->
+                        </wz-step>
+
+                    </wizard>           
+            </div>
+        </div>
+         </form>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <div id="page_content">
+    <div id="page_heading">
+        <h1>Add User</h1>
+        <span class="uk-text-muted uk-text-upper uk-text-small"></span>
+    </div>
+    <div id="page_content_inner">
+        <form action="" class="uk-form-stacked" id="product_edit_form">
+            <div class="uk-grid uk-grid-medium" data-uk-grid-margin>
+                <div class="uk-width-xLarge-2-10 uk-width-large-3-10">
+                    
+                    <div class="md-card">
+                        <div class="md-card-content">
+                        <h3 class="heading_a uk-margin-small-bottom">
+                            Photo
+                        <input type="file" id="input-file-b" class="dropify" data-default-file="assets/img/avatars/Placeholder.jpg"/>
+                    </div>
+                        <div class="md-card-content">
+                            <div class="uk-margin-bottom uk-text-center">
+                                
+                                <img ng-src="{{product.main_img}}" alt="" class="img_medium" />
+                            </div>
+                            <ul class="uk-grid uk-grid-width-small-1-3 uk-text-center" data-uk-grid-margin>
+                                <li class="uk-position-relative" ng-repeat="image in product.other_img">
+                                    <button type="button" class="uk-modal-close uk-close uk-close-alt uk-position-absolute"></button>
+                                    <img ng-src="{{image}}" alt="" class="img_small"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right">
+                                <input type="checkbox" ui-switch ng-model="product.active" name="product_edit_active_control" id="product_edit_active_control" />
+                            </div>
+                            <label class="uk-display-block uk-margin-small-top" for="product_edit_active_control">Assessment Approval</label>
+                        </div>
+                    </div>
+                    <div class="md-card">
+                        <div class="md-card-toolbar">
+                            <h3 class="md-card-toolbar-heading-text">
+                                Skills
+                            </h3>
+                        </div>
+                        <div class="md-card-content">
+                            <div class="uk-form-row">
+                                <div class="uk-input-group">
+                                    
+                                    <label for="product_edit_price_control">Programming Languages</label>
+                                    <input type="text" class="md-input" name="product_edit_price_control" id="product_edit_price_control" ng-model="product.price" md-input />
+                                </div>
+                            </div>
+                            <div class="uk-form-row">
+                                <div class="uk-input-group">
+                                    
+                                    <label for="product_edit_tax_control">Other Skills</label>
+                                    <input type="text" class="md-input" name="product_edit_tax_control" id="product_edit_tax_control" ng-model="product.tax" md-input />
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-xLarge-8-10  uk-width-large-7-10">
+                    <div class="md-card">
+                        <div class="md-card-toolbar">
+                            <h3 class="md-card-toolbar-heading-text">
+                                Personal Details
+                            </h3>
+                        </div>
+                        <div class="md-card-content large-padding">
+                            <div class="uk-grid uk-grid-divider uk-grid-medium">
+                                <div class="uk-width-large-1-2">
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_name_control">Name</label>
+                                        <input type="text" class="md-input" name="product_edit_name_control" id="product_edit_name_control" ng-model="product.name" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_manufacturer_control">Address</label>
+                                        <input type="text" class="md-input" name="product_edit_manufacturer_control" id="product_edit_manufacturer_control" ng-model="product.manufacturer" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">City</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">Pincode</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">Father's Name</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">Mother's Name</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    
+                                </div>
+                                <div class="uk-width-large-1-2">
+                                    
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">Current Location</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">Religion</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">DOB</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <label for="product_edit_sn_control">Nationality</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <p>
+                                    <span class="uk-text-muted uk-text-small uk-display-block uk-margin-small-bottom">Resume</span>
+                                    
+                                    <div class="uk-form-file md-btn md-btn-primary">
+                                     Upload Resume
+                                    <input id="form-file" class="ng-pristine ng-untouched ng-valid ng-empty" ng-model="file_upload.input_2" type="file">
+                                    </div>
+                                </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-card">
+                        <div class="md-card-toolbar">
+                            <h3 class="md-card-toolbar-heading-text">
+                                Educational Details
+                            </h3>
+                        </div>
+                        <div class="md-card-content large-padding">
+                            <div class="uk-grid uk-grid-divider uk-grid-medium">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-card">
+                        <div class="md-card-toolbar">
+                            <h3 class="md-card-toolbar-heading-text">
+                                Additional Details
+                            </h3>
+                        </div>
+                        <div class="md-card-content large-padding">
+                            <div class="uk-grid uk-grid-divider uk-grid-medium">
+                            </div>
+                            <div class="md-card">
+                    <div class="md-card-content">
+                        <form class="uk-form" >
+                            <div class="uk-grid uk-grid-medium form_hr" data-uk-grid-match ng-repeat="(topParent,section) in form_dynamic track by $index">
+                                <div class="uk-width-8-10 uk-width-medium-9-10">
+                                    <div class="uk-grid" ng-repeat="fields in section" on-last-repeat>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 0" ng-repeat="input in fields">
+                                            <div class="parsley-row">
+                                                
+                                        <label for="product_edit_sn_control">DOB</label>
+                                        <input type="text" class="md-input" name="product_edit_sn_control" id="product_edit_sn_control" name="product_edit_sn_control" ng-model="product.sn" md-input />
+                                  
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-1" ng-if="$parent.$index == 1" ng-repeat="input in fields" >
+                                            <div class="parsley-row">
+                                                <label>sdfsdfsdf</label>
+                                                <input type="{{ input.type }}" ng-model="form_dynamic_model[topParent][input.name]" class="md-input" required md-input>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 2" ng-repeat="field in fields">
+                                            <div class="parsley-row" ng-if="field.type == 'radio'">
+                                                <label>sdfsdfs</label>
+                                                <div class="dynamic_radio uk-margin-small-top">
+                                                    <span class="icheck-inline" ng-repeat="input in field.inputs">
+                                                        <input type="radio" id="{{field.name}}_{{ topParent }}_{{$index}}" ng-model="form_dynamic_model[topParent][field.name]" value="{{input.value}}" icheck required/>
+                                                        <label for="{{field.name}}_{{ topParent }}_{{$index}}" class="inline-label">{{ input.label }}</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div ng-if="field.type == 'switch'">
+                                                <label>{{field.label}}:</label>
+                                                <div class="uk-margin-small-top">
+                                                    <div class="parsley-row" ng-repeat="input in field.inputs">
+                                                        <input type="checkbox" id="{{input.name}}_{{ topParent }}_{{$index}}" name="{{input.name}}_{{ topParent }}_{{$index}}" ng-model="form_dynamic_model[topParent][input.name]" ui-switch/>
+                                                        <label for="{{input.name}}_{{ topParent }}_{{$index}}" class="inline-label">{{input.label}}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 3" ng-repeat="input in fields" >
+                                            <div class="parsley-row" ng-class="{ 'uk-margin-small-top' : input.position }">
+                                                <input type="text" config="input.config" options="input.data" ng-model="form_dynamic_model[topParent][input.name]" position="bottom" selectize ng-if="input.position">
+                                                <input type="text" config="input.config" options="input.data" ng-model="form_dynamic_model[topParent][input.name]" selectize ng-if="!input.position">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-width-2-10 uk-width-medium-1-10 uk-text-center">
+                                    <div class="uk-vertical-align uk-height-1-1">
+                                        <div class="uk-vertical-align-middle">
+                                            <a href="javascript:void(0)" ng-click="cloneSection($event,$index)" ng-if="$last"><i class="material-icons md-36">&#xE146;</i></a>
+                                            <a href="javascript:void(0)" ng-click="deleteSection($event,$index)" ng-if="!$last"><i class="material-icons md-36">&#xE872;</i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                    
+                </div>
+                
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="md-fab-wrapper">
+    <a class="md-fab md-fab-primary" href="#" ng-click="submitForm($event)">
+        <i class="material-icons">&#xE161;</i>
+    </a>
+</div> -->

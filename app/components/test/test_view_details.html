@@ -1,0 +1,93 @@
+<div id="top_bar">
+    <div class="md-top-bar">
+        <div class="uk-width-large-8-10 uk-container-center">
+            <ul class="top_bar_nav" id="list_grid_toggle">
+                <li ng-click="changeView($event,'grid')" ng-class="{ 'uk-active': grid_view }">
+                    <a ui-sref="restricted.test.test_view"><i class="uk-icon-list"></i> List</a>
+                </li>
+                <li ng-click="changeView($event,'list')" ng-class="{ 'uk-active': list_view }">
+                    <a ui-sref="restricted.test.test_list"><i class="uk-icon-th-large"></i> Grid</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="page_content">
+    <div id="page_content_inner">
+        <!-- <h3 class="heading_b uk-margin-bottom">Students 
+
+        <span style="float: right;font-size:18px;"><a ui-sref="restricted.student.student_view"><i class="uk-icon-list"></i></a></span>
+        </h3> -->
+
+        <div class="md-card uk-margin-medium-bottom">
+            <div class="md-card-content">
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="uk-width-medium-1-2">
+                    </div>
+                    <div class="uk-width-medium-1-2">
+                        <label for="contact_list_search">Find Category</label>
+                        <input class="md-input" type="text" id="contact_list_search" ng-model="searchName" md-input />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 uk-grid-width-xlarge-1-5 hierarchical_show" id="contact_list" hierarchical-show>
+            <div ng-repeat="user in contact_list | filter: searchName" data-uk-filter="{{user.company}}" on-last-repeat>
+                <div class="md-card md-card-hover">
+                    <div class="md-card-head" ng-class="{'md-bg-cyan-600' : user.featured}">
+                        <div class="md-card-head-menu" data-uk-dropdown="{pos:'bottom-right'}">
+                            <i class="md-icon material-icons" ng-class="{'md-icon-light' : user.featured}">&#xE5D4;</i>
+                            <div class="uk-dropdown uk-dropdown-small">
+                                <ul class="uk-nav">
+                                    <li><a ui-sref="restricted.test.test_editprofile({stu_id:user.id})">Edit</a></li>
+                                    <!-- <li><a href="#">Remove</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="uk-text-center">
+                            <a ui-sref="restricted.test.test_editprofile({stu_id:user.id})"><img class="md-card-head-avatar" ng-src="{{user.photo1_path}}" alt=""/></a>
+                        </div>
+                        <h3 class="md-card-head-text uk-text-center" ng-class="{'md-color-white' : user.featured}">
+                            <a ui-sref="restricted.test.test_profile({stu_id:user.id})" style="color:rgb(33,33,70);">{{user.firstname}}</a>
+                            <!-- <span class="uk-text-truncate">{{user.Admission_No}}</span> -->
+                        </h3>
+                    </div>
+                    <div class="md-card-content">
+                        <ul class="md-list">
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="md-list-heading">Status</span>
+                                    <span class="uk-text-small uk-text-muted" style="height: 32px !important;">{{user.status}}</span>
+                                    <!-- <span class="md-list-heading">Batch</span>
+                                    <span class="uk-text-small uk-text-muted">{{user.batch}}</span> -->
+                                </div>
+                            </li>
+                           <!--  <li>
+                                <div class="md-list-content">
+                                    <span class="md-list-heading">Course & Batch</span>
+                                    <span class="uk-text-small uk-text-muted">{{user.batch}}</span>
+                                </div>
+                            </li> -->
+                            <!-- <li>
+                                <div class="md-list-content">
+                                    <span class="md-list-heading">Email</span>
+                                    <span class="uk-text-small uk-text-muted uk-text-truncate">{{user.email}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="md-list-heading">Phone</span>
+                                    <span class="uk-text-small uk-text-muted">{{user.phone1}}</span>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

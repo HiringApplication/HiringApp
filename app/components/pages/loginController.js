@@ -3,8 +3,11 @@ angular
     .controller('loginCtrl', [
         '$scope',
         '$rootScope',
+        '$http',
         'utils',
-        function ($scope,$rootScope,utils) {
+        '$localStorage',
+        '$state',
+        function ($scope,$rootScope,$http,utils,$localStorage,$state) {
 
             $scope.registerFormActive = false;
 
@@ -67,6 +70,37 @@ angular
                 $event.preventDefault();
                 utils.card_show_hide($login_card,undefined,password_reset_show,undefined);
             };
+            $scope.dataList=[];
+            $http({
+                method: 'GET',
+                url: 'app/components/pages/loginJson.json'
+            }).then(function (res) {
+                //alert(res.data);
+                console.log(res.data,'data'); 
+                $scope.dataList=res.data;                
+            });
+
+            $scope.checkEmail = function(){
+                $http({
+                    method: 'GET',
+                    url: 'app/components/pages/loginJson.json'
+                }).then(function (data) {
+                    //console.log(data,'data');                   
+                });
+            };
+
+            var user = {};
+            $scope.saveVal = function(user){
+                console.log(user,'user');
+               
+                $localStorage.user_id = user.login_username;
+                console.log($localStorage.user_id);
+                if($localStorage.user_id == 'Student'){
+                    $state.go('restricted.dashboard');
+                }else if($localStorage.user_id == 'Admin'){
+                    $state.go('restricted.dashboard_admin');
+                }
+            }
 
         }
     ]);

@@ -1,0 +1,62 @@
+<div id="top_bar">
+    <div class="md-top-bar">
+        <div class="uk-width-large-8-10 uk-container-center">
+            <ul class="top_bar_nav" id="list_grid_toggle">
+                <li ng-click="changeView($event,'grid')" ng-class="{ 'uk-active': grid_view }">
+                    <a ui-sref="restricted.test.test_view"><i class="uk-icon-list"></i> List</a>
+                </li>
+                <li ng-click="changeView($event,'list')" ng-class="{ 'uk-active': list_view }">
+                    <a ui-sref="restricted.test.test_list"><i class="uk-icon-th-large"></i> Grid</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="page_content">
+    <div id="page_content_inner">
+
+        <!-- <h3 class="heading_b uk-margin-bottom">Students
+        <span style="float: right;font-size:18px;"><a ui-sref="restricted.student.student_list"><i class="uk-icon-list"></i></a></span>
+        </h3> -->
+        <div class="md-card uk-margin-medium-bottom">
+            <div class="md-card-content large-padding" ng-controller="testviewCtrl as showCase">
+                <table datatable="ng" dt-options="showCase.dtOptions" dt-column-defs="showCase.dtColumnDefs" class="uk-table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name</th>
+                            <th>Admission No</th>
+                            <th>Course</th>
+                            <th>Batch</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Admission No</th>
+                            <th>Course</th>
+                            <th>Batch</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="row in showCase.dt_data">
+                            <td>{{$index+1}}</td>
+                            <td>{{row.firstname}} {{row.lastname}}</td>
+                            <td>{{row.Admission_No}}</td>
+                            <td>{{row.course}}</td>
+                            <td>{{row.batch}}</td>
+                            <td class="uk-text-center">
+                                <a ui-sref="restricted.test.test_editprofile({stu_id:{{row.id}}})" class="ts_remove_row"><i class="md-icon material-icons">&#xE254;</i></a>
+                                <a href="#" class="ts_remove_row" ng-click="ts_remove_item($event,item)"><i class="md-icon material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

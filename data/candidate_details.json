@@ -1,0 +1,168 @@
+[
+    {
+        "id": 1,
+        "name": "Abdul kadar",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "abdulkadar@gmail.com",
+        "phone": "1-999-421-1704",
+        "status" : "Rejected"
+    },
+    {
+        "id": 2,
+        "name": "Musthak",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "musthak@gmail.com",
+        "phone": "1-120-647-2157",
+        "status" : "Selected"
+    },
+    {
+        "id": 3,
+        "name": "vinoth",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "florian.bogisich@nitzsche.com",
+        "phone": "(277)453-1944x978",
+        "status" : "Hold"
+    },
+    {
+        "id": 4,
+        "name": "Senthil",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Experienced",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "vernon.wilderman@lindgrenpfannerstill.com",
+        "phone": "00186602373",
+        "status" : "Selected"
+    },
+    {
+        "id": 5,
+        "name": "Manikandan",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Experienced",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "holden91@kuvalisschoen.com",
+        "phone": "338-802-4840",
+        "status" : "Rejected"
+    },
+    {
+        "id": 6,
+        "name": "Vijayraj.",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Experienced",
+        "featured": false,
+        "info": "B.Tech.",
+        "email": "nicklaus25@gmail.com",
+        "phone": "1-757-935-0636x59330",
+        "status" : "Selected"
+    },
+    {
+        "id": 7,
+        "name": "Manivannan",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Experienced",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "edurgan@lueilwitzhuels.com",
+        "phone": "917.005.9994x6083",
+        "status" : "Hold"
+    },
+    {
+        "id": 8,
+        "name": "Dustin Larson",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Experienced",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "montana82@yahoo.com",
+        "phone": "510-224-2704",
+         "status" : "Hold"
+    },
+    {
+        "id": 9,
+        "name": "Daija Hansen",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Experienced",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "wkoch@hotmail.com",
+        "phone": "849.652.0538",
+         "status" : "Hold"
+    },
+    {
+        "id": 10,
+        "name": "Dr.Candida Rodriguez",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Experienced",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "raynor.bernard@mckenziehilll.org",
+        "phone": "022-375-8464x2110",
+         "status" : "Hold"
+    },
+    {
+        "id": 11,
+        "name": "Fanny Gottlieb DVM",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "kristoffer.bahringer@hotmail.com",
+        "phone": "1-420-094-1371x2468",
+         "status" : "Hold"
+    },
+    {
+        "id": 12,
+        "name": "Katelyn Stracke",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "ansley45@yahoo.com",
+        "phone": "(621)016-3410",
+         "status" : "Hold"
+    },
+    {
+        "id": 13,
+        "name": "Trever Hudson",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "ymueller@powlowski.com",
+        "phone": "(075)559-5305x241",
+        "status" : "Rejected"
+    },
+    {
+        "id": 14,
+        "name": "Mr. Osvaldo Brown DVM",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "B.tech.",
+        "email": "harvey.prudence@yahoo.com",
+        "phone": "08882473403",
+         "status" : "Interviewed"
+    },
+    {
+        "id": 15,
+        "name": "Dee Mohr",
+        "avatar": "assets/img/avatars/user-alt.png",
+        "company": "Fresher",
+        "featured": false,
+        "info": "Btech.",
+        "email": "evalyn65@hotmail.com",
+        "phone": "189.882.5122x1771",
+         "status" : "Hold"
+    }
+    
+]

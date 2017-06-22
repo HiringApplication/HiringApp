@@ -6,7 +6,7 @@ altairApp
 
             // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
             $urlRouterProvider
-                .when('/dashboard', '/')
+                .when('/login', '/')
                 .otherwise('/');
 
             $stateProvider
@@ -32,7 +32,7 @@ altairApp
                 })
             // -- LOGIN PAGE --
                 .state("login", {
-                    url: "/login",
+                    url: "/",
                     templateUrl: 'app/components/pages/loginView.html',
                     controller: 'loginCtrl',
                     resolve: {
@@ -40,6 +40,7 @@ altairApp
                             return $ocLazyLoad.load([
                                 'lazy_uikit',
                                 'lazy_iCheck',
+                                'lazy_wizard',
                                 'app/components/pages/loginController.js'
                             ]);
                         }]
@@ -66,7 +67,7 @@ altairApp
                 })
             // -- DASHBOARD --
                 .state("restricted.dashboard", {
-                    url: "/",
+                    url: "/dashboard",
                     templateUrl: 'app/components/dashboard/dashboardView.html',
                     controller: 'dashboardCtrl',
                     resolve: {
@@ -82,6 +83,47 @@ altairApp
                                 'lazy_clndr',
                                 'lazy_google_maps',
                                 'app/components/dashboard/dashboardController.js'
+                            ], {serie: true} );
+                        }],
+                        sale_chart_data: function($http){
+                            return $http({method: 'GET', url: 'data/mg_dashboard_chart.min.json'})
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        },
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Dashboard'
+                    },
+                    ncyBreadcrumb: {
+                        label: 'Home'
+                    }
+                })
+
+                // -- DASHBOARD ADMIN--
+                .state("restricted.dashboard_admin", {
+                    url: "/dashboard_admin",
+                    templateUrl: 'app/components/dashboard_admin/dashboardView.html',
+                    controller: 'dashboardController',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                // ocLazyLoad config (app/app.js)
+                                'lazy_countUp',
+                                'lazy_charts_peity',
+                                'lazy_charts_easypiechart',
+                                'lazy_charts_metricsgraphics',
+                                'lazy_charts_chartist',
+                                'lazy_weathericons',
+                                'lazy_clndr',
+                                'lazy_google_maps',
+                                'app/components/dashboard_admin/dashboardController.js'
                             ], {serie: true} );
                         }],
                         sale_chart_data: function($http){
@@ -268,6 +310,206 @@ altairApp
                     }
                 })
 
+                //USER OR CANDIDATES
+               .state("restricted.candidates", {
+                    url: "/candidates",
+                    
+                    template: '<div ui-view autoscroll="false" ng-class="{ \'uk-height-1-1\': page_full_height }" />',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_tablesorter',
+                                'app/components/candidateDetails/candidatesController.js'
+                            ]);
+                        }],
+                        candidates_data: function($http){
+                            return $http({ method: 'GET', url: 'data/candidates.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    }
+                })
+                .state("restricted.candidates.candidates", {
+                    url: "/candidates",
+                    templateUrl: 'app/components/candidateDetails/candidates.html',
+                    controller: 'candidatesController',
+                    data: {
+                        pageTitle: 'Issues List'
+                    }
+                })
+                .state("restricted.candidates.candidatesDetails", {
+                    url: "/candidatesDetails/{profileId}",
+                    controller: 'candidatesController',
+                    templateUrl: 'app/components/candidateDetails/candidatesDetails.html',
+                    data: {
+                        pageTitle: 'Issue Details'
+                    }
+                })
+                .state("restricted.candidates.candidatesadd", {
+                    url: "/candidatesadd",
+                    templateUrl: 'app/components/candidateDetails/candidate_addView.html',
+                    controller: 'candidates_addCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_parsleyjs',
+                                'lazy_wizard',
+                                'lazy_dropify',
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/candidateDetails/candidates_addCtrl.js'
+                            ], {serie:true});
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'Wizard'
+                    }
+                })
+
+
+                //Job Openings Admin Panel
+                .state("restricted.jobopeningsadmin", {
+                    url: "/jobopeningsadmin",
+                    
+                    template: '<div ui-view autoscroll="false" ng-class="{ \'uk-height-1-1\': page_full_height }" />',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_tablesorter',
+                                'app/components/jobopenings_admin/jobopeningsController.js'
+                            ]);
+                        }],
+                        jobs_data: function($http){
+                            return $http({ method: 'GET', url: 'data/jobopeningsadmin.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    }
+                })
+                .state("restricted.jobopeningsadmin.jobopeningsadmin", {
+                    url: "/jobopeningsadmin",
+                    templateUrl: 'app/components/jobopenings_admin/jobopenings_adminView.html',
+                    controller: 'jobopeningsController',
+                    data: {
+                        pageTitle: 'Issues List'
+                    }
+                })
+                .state("restricted.jobopeningsadmin.jobopeningsadmindetails", {
+                    url: "/jobopeningsadmindetails/{jobId}",
+                    controller: 'jobopeningsController',
+                    templateUrl: 'app/components/jobopenings_admin/jobopenings_admindetailsView.html',
+                    data: {
+                        pageTitle: 'Issue Details'
+                    },
+                    params:{jobId:null}
+                })
+                .state("restricted.jobopeningsadmin.jobopeningsadminnew", {
+                    url: "/jobopeningsadminnew",
+                    controller: 'jobopeningsController',
+                    templateUrl: 'app/components/jobopenings_admin/jobopenings_admindetailsView.html',
+                    data: {
+                        pageTitle: 'Issue Details'
+                    }
+                })
+                .state("restricted.jobopeningsadmin.jobopeningsadminview", {
+                    url: "/jobopeningsadminview/{jobId}",
+                    controller: 'jobopeningsController',
+                    templateUrl: 'app/components/jobopenings_admin/jobopenings_adminViewdetails.html',
+                    data: {
+                        pageTitle: 'Issue Details'
+                    }
+                })
+
+
+                //Online Test
+                .state("restricted.test", {
+                    url: "/test",
+                    template: '<div ui-view autoscroll="false"/>',
+                    abstract: true
+                })
+                
+                
+                .state("restricted.test.test_editprofile", {
+                    url: "/test_editprofile/{cat_id}",
+                    templateUrl: 'app/components/test/profile_edit.html',
+                    controller: 'profile_editCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_parsleyjs',
+                                'lazy_wizard',
+                                'lazy_dropify',
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/test/profile_editCtrl.js'
+                            ],{serie: true});
+                        }],
+                        test_data: function($http){
+                            return $http({ method: 'GET', url: 'app/components/test/test_profile_view.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Student Profile'
+                    },
+                    params:{stu_id:null}
+                })
+                .state("restricted.test.test_view", {
+                    url: "/test_view",
+                    templateUrl: 'app/components/test/test_view.html',
+                    controller: 'testviewCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'bower_components/angular-resource/angular-resource.min.js',
+                                'lazy_datatables',
+                                'app/components/test/testviewCtrl.js'
+                            ],{serie: true});
+                        }],
+                         test_data: function($http){
+                            return $http({ method: 'GET', url: 'app/components/test/test_profile_view.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+
+                    },
+                    data: {
+                        pageTitle: 'Student View'
+                    }
+                })
+
+                .state("restricted.test.test_add", {
+                    url: "/test_add",
+                    templateUrl: 'app/components/test/testview_add.html',
+                    controller: 'test_addCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_parsleyjs',
+                                'lazy_wizard',
+                                'lazy_dropify',
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'bower_components/angular-resource/angular-resource.min.js',
+                                'app/components/test/test_addCtrl.js'
+                            ],{serie: true});
+                        }],
+                         test_data: function($http){
+                            return $http({ method: 'GET', url: 'app/components/test/test_profile_view.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+
+                    },
+                    data: {
+                        pageTitle: 'Student View'
+                    }
+                })
+                
+
             // -- LAYOUT --
                 .state("restricted.layout", {
                     url: "/layout",
@@ -285,6 +527,150 @@ altairApp
                     },
                     data: {
                         pageTitle: 'Top Menu'
+                    }
+                })
+                .state("restricted.layout.registerpage", {
+                    url: "/registerpage",
+                    templateUrl: 'app/components/layout/registerpageView.html',
+                    controller: 'registerpageCtrl',
+                    resolve: {
+                       deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_parsleyjs',
+                                'lazy_wizard',
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/layout/registerpageController.js'
+                            ], {serie:true});
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'register page'
+                    }
+                })
+                  .state("restricted.layout.testpage", {
+                    url: "/testpage",
+                    templateUrl: 'app/components/layout/testpageView.html',
+                    controller: 'testpageCtrl',
+                    resolve: {
+                       deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_parsleyjs',
+                                'lazy_wizard',
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/layout/testpageController.js'
+                            ], {serie:true});
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'test page'
+                    }
+                })
+
+                  .state("restricted.layout.homepage", {
+                    url: "/homepage",
+                    templateUrl: 'app/components/layout/homepageView.html',
+                    controller: 'homepageCtrl',
+                    resolve: {
+                       deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_parsleyjs',
+                                'lazy_wizard',
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/layout/homepageController.js'
+                            ], {serie:true});
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'register page'
+                    }
+                })
+                //    .state("restricted.notifications", {
+                //     url: "/notifications",
+                //     template: '<div ui-view autoscroll="false"/>',
+                //     abstract: true,
+                //     resolve: {
+                //         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                //             return $ocLazyLoad.load([
+                //                 'lazy_tablesorter',
+                //             ]);
+                //         }],
+                //         jobs_data: function($http){
+                //             return $http({ method: 'GET', url: 'data/jobopeningsadmin.json' })
+                //                 .then(function (data) {
+                //                     return data.data;
+                //                 });
+                //         }
+                //     }
+                // })
+               
+                // .state("restricted.notifications.notifications", {
+                //     url: "/notifications",
+                //     templateUrl: 'app/components/notifications/notifications.html',
+                //     controller: 'notificationsCtrl',
+                //     resolve: {
+                //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                //             return $ocLazyLoad.load('app/components/notifications/notificationsController.js');
+                //         }]
+                //     },
+                //     data: {
+                //         pageTitle: 'Notifications (components)'
+                //     }
+                // })
+                // .state("restricted.notifications.notificationsDetails", {
+                //     url: "/notificationsDetails",
+                //     templateUrl: 'app/components/notifications/notifications_detailsView.html',
+                //     controller: 'notifications_detailsController',
+                //     resolve: {
+                //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                //             return $ocLazyLoad.load('app/components/notifications/notifications_detailsController.js');
+                //         }]
+                //     },
+                //     data: {
+                //         pageTitle: 'Notifications (components)'
+                //     }
+                // })
+                .state("restricted.notifications", {
+                    url: "/notifications",
+                    template: '<div ui-view autoscroll="false"/>',
+                    abstract:true,
+                    resolve: {
+                        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_tablesorter',
+                            ]);
+                        }],
+                        jobs_data: function($http){
+                            return $http({ method: 'GET', url: 'data/jobopeningsadmin.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    }
+                })
+                .state("restricted.notifications.notifications", {
+                    url: "/notifications",
+                    templateUrl: 'app/components/notifications/notifications.html',
+                    controller: 'notificationsController',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load('app/components/notifications/notificationsController.js');
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'Notifications (components)'
+                    }
+                })
+                .state("restricted.notifications.notifications_details", {
+                    url: "/notifications_details/{jobId}",
+                    templateUrl: 'app/components/notifications/notifications_detailsView.html',
+                    controller: 'notificationsController',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load('app/components/notifications/notificationsController.js');
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'Notifications (components)'
                     }
                 })
                 .state("restricted.layout.full_header", {
@@ -553,13 +939,19 @@ altairApp
                         pageTitle: 'Buttons FAB (components)'
                     }
                 })
-                .state("restricted.components.cards", {
+                .state("restricted.layout.cards", {
                     url: "/cards",
-                    templateUrl: 'app/components/components/cardsView.html',
+                    templateUrl: 'app/components/layout/cardsView.html',
                     controller: 'cardsCtrl',
                     resolve: {
+                        training_data: function($http){
+                            return $http({method: 'GET', url: 'data/training_product.json'})
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        },
                         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load('app/components/components/cardsController.js');
+                            return $ocLazyLoad.load('app/components/layout/cardsController.js');
                         }]
                     },
                     data: {
@@ -737,6 +1129,13 @@ altairApp
                         pageTitle: 'Switcher (components)'
                     }
                 })
+                 .state("restricted.components.status", {
+                    url: "/status",
+                    templateUrl: 'app/components/components/statusView.html',
+                    data: {
+                        pageTitle: 'status (components)'
+                    }
+                })
                 .state("restricted.components.tables_examples", {
                     url: "/tables_examples",
                     templateUrl: 'app/components/components/tables_examplesView.html',
@@ -799,6 +1198,21 @@ altairApp
                     },
                     data: {
                         pageTitle: 'Product Details'
+                    }
+                })
+                .state("restricted.layout.testcondition", {
+                    url: "/testcondition",
+                    templateUrl: 'app/components/layout/testconditionView.html',
+                    controller: 'testconditionCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'app/components/layout/testconditionController.js'
+                            ]);
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'TestCondition'
                     }
                 })
                 .state("restricted.ecommerce.product_edit", {
@@ -996,6 +1410,22 @@ altairApp
                             return $ocLazyLoad.load([
                                 'lazy_diff',
                                 'app/components/plugins/diff_viewController.js'
+                            ],{serie:true});
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'Diff View'
+                    }
+                })
+                .state("restricted.layout.testfinal", {
+                    url: "/testfinal",
+                    templateUrl: 'app/components/layout/testfinalView.html',
+                    controller: 'testfinalCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_diff',
+                                'app/components/layout/testfinalController.js'
                             ],{serie:true});
                         }]
                     },
@@ -1470,6 +1900,9 @@ altairApp
                             return $http({ method: 'GET', url: 'data/snippets.json' })
                                 .then(function (data) {
                                     return data.data;
+                            /* return $http({ method: 'GET', url: 'data/training_product.json' })
+                                .then(function (data) {
+                                    return data.data;*/
                                 });
                         }
                     },

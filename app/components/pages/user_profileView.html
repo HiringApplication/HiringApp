@@ -4,7 +4,7 @@
                 <div class="uk-width-large-7-10">
                     <div class="md-card">
                         <div class="user_heading">
-                            <div class="user_heading_menu" data-uk-dropdown="{pos:'bottom-right'}">
+                            <!-- <div class="user_heading_menu" data-uk-dropdown="{pos:'bottom-right'}">
                                 <i class="md-icon material-icons md-icon-light">&#xE5D4;</i>
                                 <div class="uk-dropdown uk-dropdown-small">
                                     <ul class="uk-nav">
@@ -12,17 +12,21 @@
                                         <li><a href="#">Action 2</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="user_heading_avatar">
                                 <div class="thumbnail">
                                     <img ng-src="{{user_data.avatar}}" alt="user avatar"/>
                                 </div>
                             </div>
                             <div class="user_heading_content">
+                            <!-- <div style="float:right">
+                                <a class="md-btn md-btn-success md-btn-wave-light waves-effect waves-button waves-light" ui-sref="restricted.jobopeningsadmin.jobopeningsadminnew" href="#/jobopeningsadmin/jobopeningsadminnew"><i class="material-icons">&#xE150;</i> Edit Profile</a>
+                                </div> -->
                                 <h2 class="heading_b uk-margin-bottom">
                                     <span class="uk-text-truncate">H.Muhamed Musthak</span>
                                     <span class="sub-heading">B.E Computer Science and Engineering</span>
                                 </h2>
+                                
                                 <ul class="user_stats">
                                     <li>
                                         <h4 class="heading_a">2016<span class="sub-heading">Year of passing</span></h4>
@@ -34,8 +38,18 @@
                                         <h4 class="heading_a">Fresher<span class="sub-heading">Experience</span></h4>
                                     </li>
                                 </ul>
+
                             </div>
-                            <a class="md-fab md-fab-small md-fab-accent" ui-sref="restricted.pages.user_edit">
+
+
+
+
+                            <!-- <div>
+                                <div class="uk-width-medium-1-6">
+                                    <a class="md-btn md-btn-success md-btn-wave-light waves-effect waves-button waves-light" href="javascript:void(0)">Edit Profile</a>
+                                </div>
+                            </div> -->
+                            <a class="md-fab md-fab-small md-fab-accent" ui-sref="restricted.pages.user_edit" data-uk-tooltip="{pos:'bottom'}" title="Edit Profile">
                                 <i class="material-icons">&#xE150;</i>
                             </a>
                         </div>
@@ -50,6 +64,74 @@
                                    
                                     <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
                                         <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Personal Details</h4>
+                                            <ul class="md-list md-list-addon">
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-male"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Hassan</span>
+                                                        <span class="uk-text-small uk-text-muted">Father Name</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                         <i class="md-list-addon-icon uk-icon-female"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Ayesha</span>
+                                                        <span class="uk-text-small uk-text-muted">Mother Name</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                         <i class="md-list-addon-icon uk-icon-birthday-cake"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">07-03-1995</span>
+                                                        <span class="uk-text-small uk-text-muted">Date of Birth</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                         <i class="md-list-addon-icon uk-icon-mars-double"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Male</span>
+                                                        <span class="uk-text-small uk-text-muted">Gender</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-street-view"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Muslim</span>
+                                                        <span class="uk-text-small uk-text-muted">Religion</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-flag"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Indian</span>
+                                                        <span class="uk-text-small uk-text-muted">Nationality</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-language"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Tamil, English</span>
+                                                        <span class="uk-text-small uk-text-muted">Languages Known</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>   
+                                            <div class="uk-width-large-1-2">
                                             <h4 class="heading_c uk-margin-small-bottom">Contact Info</h4>
                                             <ul class="md-list md-list-addon">
                                                 <li>
@@ -72,7 +154,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map"></i>
+                                                        <i class="md-list-addon-icon uk-icon-map-marker"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">No.5,RMK nager,Kandamangalam</span>
@@ -81,7 +163,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                        <i class="md-list-addon-icon uk-icon-map"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">Pondicherry</span>
@@ -90,16 +172,37 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons-fa-building"></i>
+                                                        <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Pondicherry</span>
+                                                        <span class="uk-text-small uk-text-muted">State</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-map-o"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">605620</span>
                                                         <span class="uk-text-small uk-text-muted">Pincode</span>
                                                     </div>
                                                 </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-flag-checkered"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">India</span>
+                                                        <span class="uk-text-small uk-text-muted">Country</span>
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </div>                       
-                                    </div>                          
+                                    </div> 
+                                   
+                                                        
+                                                
                                 </li>
                                  <li>                                   
                                     <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
@@ -108,7 +211,7 @@
                                             <ul class="md-list md-list-addon">
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE563;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">Roever Engineering College</span>
@@ -117,7 +220,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE80c;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">Computer Science and Engineering</span>
@@ -126,7 +229,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map"></i>
+                                                        <i class="md-list-addon-icon uk-icon-percent"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">95.8%</span>
@@ -135,7 +238,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                        <i class="md-list-addon-icon uk-icon-calendar"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">2016</span>
@@ -149,7 +252,7 @@
                                             <ul class="md-list md-list-addon">
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE563;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">Roever Engineering College</span>
@@ -158,7 +261,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE80c;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">Computer Science and Engineering</span>
@@ -167,7 +270,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map"></i>
+                                                        <i class="md-list-addon-icon uk-icon-percent"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">95.8%</span>
@@ -176,7 +279,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                        <i class="md-list-addon-icon uk-icon-calendar"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">2016</span>
@@ -192,7 +295,7 @@
                                             <ul class="md-list md-list-addon">
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE563;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">SAI Her.Sec.School</span>
@@ -201,7 +304,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE80c;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">Computer Science and Engineering</span>
@@ -210,7 +313,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map"></i>
+                                                        <i class="md-list-addon-icon uk-icon-percent"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">57%</span>
@@ -219,7 +322,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                        <i class="md-list-addon-icon uk-icon-calendar"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">2012</span>
@@ -233,7 +336,7 @@
                                             <ul class="md-list md-list-addon">
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE563;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">SAI Her.Sec.School</span>
@@ -242,7 +345,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE80c;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">State Board</span>
@@ -251,7 +354,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map"></i>
+                                                        <i class="md-list-addon-icon uk-icon-percent"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">75%</span>
@@ -260,7 +363,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map-pin"></i>
+                                                        <i class="md-list-addon-icon uk-icon-calendar"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">2010</span>
@@ -278,7 +381,7 @@
                                             <ul class="md-list md-list-addon">
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE84F;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">cloudlogic Technology</span>
@@ -287,7 +390,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                        <i class="md-list-addon-icon material-icons">&#xE917;</i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">Trainee</span>
@@ -296,14 +399,14 @@
                                                 </li>
                                                 <li>
                                                     <div class="md-list-addon-element">
-                                                        <i class="md-list-addon-icon uk-icon-map"></i>
+                                                        <i class="md-list-addon-icon uk-icon-calendar"></i>
                                                     </div>
                                                     <div class="md-list-content">
                                                         <span class="md-list-heading">3 Month</span>
                                                         <span class="uk-text-small uk-text-muted">Duration</span>
                                                     </div>
                                                 </li>
-                                                <li>
+                                                <!-- <li>
                                                     <div class="md-list-addon-element">
                                                         <i class="md-list-addon-icon uk-icon-map-pin"></i>
                                                     </div>
@@ -311,7 +414,7 @@
                                                         <span class="md-list-heading">Pondicherry</span>
                                                         <span class="uk-text-small uk-text-muted">City</span>
                                                     </div>
-                                                </li>                                
+                                                </li>    -->                             
                                             </ul>
                                         </div>
                                     </div>
@@ -320,7 +423,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="uk-width-large-3-10">
+
+                 <div class="uk-width-large-3-10">
                     <div class="md-card">
                         <div class="md-card-content">
                             <div class="uk-margin-medium-bottom">

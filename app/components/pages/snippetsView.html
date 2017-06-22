@@ -23,16 +23,16 @@
                         <div ng-repeat="snippet in snippets" data-uk-filter="snippets-lang-{{ snippet.language }}">
                             <div class="md-card md-card-hover md-card-overlay" data-snippet-title="{{ snippet.title }}">
                                 <div class="md-card-content" style="cursor: pointer" ng-click="showSnippet($event,snippet)">
-<pre class="line-numbers"><code class="language-{{ snippet.language }}" prism-highlight ng-bind-html="snippet.content"></code></pre>
+<img src="{{snippet.content}}">
                                 </div>
                                 <div class="md-card-overlay-content">
                                     <div class="uk-clearfix md-card-overlay-header">
                                         <card-overlay-toggle></card-overlay-toggle>
-                                        <h4>{{ snippet.title }}</h4>
+                                        <h4></h4>
                                     </div>
                                     <div class="md-card-overlay-content-inner">
                                         <p class="uk-margin-bottom truncate-text" style="height: 88px">
-                                            {{ snippet.description }}
+                                            
                                         </p>
                                         <p>
                                             <span class="uk-badge uk-badge-danger" ng-if="snippet.language == 'css'">CSS</span>

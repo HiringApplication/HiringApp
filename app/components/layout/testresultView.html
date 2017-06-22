@@ -1,0 +1,95 @@
+<div id="page_content">
+  
+        <div id="page_heading" data-uk-sticky="{ top: 48, media: 960 }">
+            <h2>Online test
+             <span class='uk-text-large'>{{counter | secondsToDateTime | date:'mm:ss'}}</span></h2>
+        </div>
+         <div id="page_content_inner">
+<!-- appptitude-->        
+                <div class="md-card uk-margin-top" ng-repeat="page in test">
+                    <div class="md-card-content">                        
+                                <h3 class="search_list_heading uk-margin-bottom"><a>{{ page.qid }} ) {{ page.question }}</a></h3>                           
+                                             <div class="uk-width-medium-3-3">
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_1" icheck ng-model="radio_demo_inline" value="radio_inline_1" />
+                                    <label for="radio_demo_inline_1" class="inline-label">{{page.menu1}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_2" icheck ng-model="radio_demo_inline" value="radio_inline_2" />
+                                    <label for="radio_demo_inline_2" class="inline-label">{{page.menu2}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_3" icheck ng-model="radio_demo_inline" value="radio_inline_3" />
+                                    <label for="radio_demo_inline_3" class="inline-label">{{page.menu3}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_3" icheck ng-model="radio_demo_inline" value="radio_inline_3" />
+                                    <label for="radio_demo_inline_3" class="inline-label">{{page.menu4}}</label>
+                                </span>
+                               
+                            </div>
+                          
+                    </div>
+                </div>
+<!-- verbal--><!-- 
+                        <div class="md-card" ng-repeat="page in test">
+                    <div class="md-card-content">                        
+                                <h3 class="search_list_heading uk-margin-bottom"><a>{{ page.question }}</a></h3>                           
+                                             <div class="uk-width-medium-3-3">
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_1" icheck ng-model="radio_demo_inline" value="radio_inline_1" />
+                                    <label for="radio_demo_inline_1" class="inline-label">{{page.menu1}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_2" icheck ng-model="radio_demo_inline" value="radio_inline_2" />
+                                    <label for="radio_demo_inline_2" class="inline-label">{{page.menu2}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_3" icheck ng-model="radio_demo_inline" value="radio_inline_3" />
+                                    <label for="radio_demo_inline_3" class="inline-label">{{page.menu3}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_3" icheck ng-model="radio_demo_inline" value="radio_inline_3" />
+                                    <label for="radio_demo_inline_3" class="inline-label">{{page.menu4}}</label>
+                                </span>
+                               
+                            </div>
+                          
+                    </div>
+                </div> -->
+<!-- technical-->
+                        <!-- <div class="md-card" ng-repeat="page in test">
+                    <div class="md-card-content">                        
+                                <h3 class="search_list_heading uk-margin-bottom"><a>{{ page.question }}</a></h3>                           
+                                             <div class="uk-width-medium-3-3">
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_1" icheck ng-model="radio_demo_inline" value="radio_inline_1" />
+                                    <label for="radio_demo_inline_1" class="inline-label">{{page.menu1}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_2" icheck ng-model="radio_demo_inline" value="radio_inline_2" />
+                                    <label for="radio_demo_inline_2" class="inline-label">{{page.menu2}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_3" icheck ng-model="radio_demo_inline" value="radio_inline_3" />
+                                    <label for="radio_demo_inline_3" class="inline-label">{{page.menu3}}</label>
+                                </span>
+                                <span class="icheck-inline uk-margin-large-left">
+                                    <input type="radio" name="radio_demo_inline" id="radio_demo_inline_3" icheck ng-model="radio_demo_inline" value="radio_inline_3" />
+                                    <label for="radio_demo_inline_3" class="inline-label">{{page.menu4}}</label>
+                                </span>
+                               
+                            </div> -->
+
+                             <div class="uk-text-right uk-margin-large-top">
+                
+                    <button ui-sref="restricted.dashboard" type="button" class="md-btn  md-btn-flat-primary">Continue</button><!-- </a> -->
+                </div>
+                          
+                    </div>
+                </div>
+           
+
+
+         
+             

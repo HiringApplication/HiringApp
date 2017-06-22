@@ -1,0 +1,313 @@
+    <style type="text/css">
+        .setWidth{
+            font-size: 26px !important;
+        }
+        #socialStyle > li{
+            border: none !important;
+        }
+
+    </style>
+    <div id="page_content">
+        <div id="page_content_inner">
+            <div class="uk-grid" data-uk-grid-margin data-uk-grid-match id="user_profile">
+                <div class="uk-width-large-7-10">
+                    <div class="md-card">
+                        <div class="user_heading" style="background-color: rgb(231,231,231);padding: 20px !important;">
+                            <!-- <div class="user_heading_menu" data-uk-dropdown="{pos:'bottom-right'}">
+                                <i class="md-icon material-icons md-icon-light">&#xE5D4;</i>
+                                <div class="uk-dropdown uk-dropdown-small">
+                                    <ul class="uk-nav">
+                                        <li><a href="#">Action 1</a></li>
+                                        <li><a href="#">Action 2</a></li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                            <div class="user_heading_avatar">
+                                <div class="thumbnail">
+                                    <img ng-src="{{user_data.photo1_path}}" alt="user avatar"/>
+                                </div>
+                            </div>
+                            <div class="user_heading_content">
+                                <h2 class="heading_b uk-margin-bottom" style="color: #444;">
+                                    <span class="uk-text-truncate">{{user_data.firstname}} {{user_data.lastname}}</span>
+                                    <span class="sub-heading">{{user_data.admno}}</span>
+                                </h2>
+                                <ul class="user_stats">
+                                    <li>
+                                        <h4 class="heading_c" style="color: #444;">{{user_data.course}}</h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="heading_c" style="color: #444;">{{user_data.batch}}</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="md-fab md-fab-small md-fab-accent" ui-sref="restricted.test.test_editprofile({stu_id:user_data.id})">
+                                <i class="material-icons">&#xE150;</i>
+                            </a>
+                        </div>
+                        <div class="user_content">
+                            <ul id="user_profile_tabs" class="uk-tab" data-uk-tab="{connect:'#user_profile_tabs_content', animation:'slide-horizontal'}" data-uk-sticky="{ top: 48, media: 960 }">
+                                <li class="uk-active"><a href="#">About</a></li>
+                                <li><a href="#">Parent/Guardian Details</a></li>
+                                <li><a href="#">Additional Details</a></li>
+                            </ul>
+                            <ul id="user_profile_tabs_content" class="uk-switcher uk-margin">
+                                <li>
+                                    {{user_data.about}}
+                                    <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Personal Info</h4>
+                                            <ul class="md-list">
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">03.09.2017</span>
+                                                        <span class="uk-text-small uk-text-muted">Date of Birth</span>
+                                                    </div>
+                                                </li>
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user_data.gender}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Gender</span>
+                                                    </div>
+                                                </li>
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user_data.nationality}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Nationality</span>
+                                                    </div>
+                                                </li>
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user_data.religion}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Religion</span>
+                                                    </div>
+                                                </li>
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">Tamil</span>
+                                                        <span class="uk-text-small uk-text-muted">Mother Tongue</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Contact Info</h4>
+                                            <ul class="md-list md-list-addon">
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE0C8;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">
+                                                        {{user_data.address}},
+                                                        {{user_data.city}}
+                                                        {{user_data.state}} -
+                                                        {{user_data.pincode}},
+                                                        {{user_data.country}}
+                                                        </span>
+                                                        <span class="uk-text-small uk-text-muted">Address</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user_data.phone1}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Phone</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user_data.email}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Email</span>
+                                                    </div>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+
+                                    <div class="uk-accordion" data-uk-accordion>
+                                        <h3 class="uk-accordion-title" ng-repeat-start="parentsss in user_data.parentCount">Father Personal & Contact Details</h3>
+                                        <div class="uk-accordion-content" ng-repeat-end>
+                                            <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                                <div class="uk-width-large-1-2">
+                                                    <h4 class="heading_c uk-margin-small-bottom">Personal Info</h4>
+                                                    <ul class="md-list">
+                                                        <li >
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">{{user_data.parent_name}}</span>
+                                                                <span class="uk-text-small uk-text-muted">Parent Name</span>
+                                                            </div>
+                                                        </li>
+                                                        <li >
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">{{user_data.gender}}</span>
+                                                                <span class="uk-text-small uk-text-muted">Gender</span>
+                                                            </div>
+                                                        </li>
+                                                        <li >
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">{{user_data.relation}}</span>
+                                                                <span class="uk-text-small uk-text-muted">Relation</span>
+                                                            </div>
+                                                        </li>
+                                                        <li >
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">{{user_data.Occupation}}</span>
+                                                                <span class="uk-text-small uk-text-muted">Occupation</span>
+                                                            </div>
+                                                        </li>
+                                                        <li >
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">{{user_data.income}}</span>
+                                                                <span class="uk-text-small uk-text-muted">Income</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="uk-width-large-1-2">
+                                                    <h4 class="heading_c uk-margin-small-bottom">Contact Info</h4>
+                                                    <ul class="md-list md-list-addon">
+                                                        <li>
+                                                            <div class="md-list-addon-element">
+                                                                <i class="md-list-addon-icon material-icons">&#xE0C8;</i>
+                                                            </div>
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">
+                                                                {{user_data.address}}
+                                                                {{user_data.city}}
+                                                                {{user_data.state}} -
+                                                                {{user_data.pincode}},
+                                                                {{user_data.country}}
+                                                                </span>
+                                                                <span class="uk-text-small uk-text-muted">Address</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="md-list-addon-element">
+                                                                <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                            </div>
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">{{user_data.phone2}}</span>
+                                                                <span class="uk-text-small uk-text-muted">Phone</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="md-list-addon-element">
+                                                                <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                            </div>
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">rajvijay24@yahoo.com</span>
+                                                                <span class="uk-text-small uk-text-muted">Email</span>
+                                                            </div>
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Social Profile</h4>
+                                            <ul class="md-list md-list-addon" >
+                                                <li style="border: none !important;" ng-show="user_data.facebook.length > 0">
+                                                    <div class="md-list-addon-element">
+                                                        <a href="{{user_data.facebook}}"><i class="md-list-addon-icon uk-icon-facebook setWidth"></i></a>
+                                                    </div>
+                                                    <!-- <div class="md-list-content">
+                                                        <span class="md-list-heading">
+                                                        </span>
+                                                        <span class="uk-text-small uk-text-muted">Facebook</span>
+                                                    </div> -->
+                                                </li>
+                                                <li style="border: none !important;" ng-show="user_data.google.length > 0">
+                                                    <div class="md-list-addon-element">
+                                                        <a href="{{user_data.google}}"><i class="md-list-addon-icon uk-icon-google-plus setWidth"></i></a>
+                                                    </div>
+                                                    <!-- <div class="md-list-content">
+                                                        <span class="uk-text-small uk-text-muted">Google+</span>
+                                                    </div> -->
+                                                </li>
+                                                <li ng-show="user_data.linkedin.length > 0">
+                                                    <div class="md-list-addon-element">
+                                                        <a href="{{user_data.linkedin}}"><i class="md-list-addon-icon uk-icon-linkedin setWidth"></i></a>
+                                                    </div>
+                                                    <!-- <div class="md-list-content">
+                                                        <span class="uk-text-small uk-text-muted">Linkedin</span>
+                                                    </div> -->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-large-1-2" ng-show="user_data.sibling.length > 0">
+                                            <h4 class="heading_c uk-margin-small-bottom">Siblings</h4>
+                                            <ul class="md-list md-list-addon">
+                                                <li ng-repeat="sibl in user_data.sibling">
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE853;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">
+                                                        {{sibl.name}}
+                                                        </span>
+                                                        <span class="uk-text-small uk-text-muted">Sibling</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-large-3-10">
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-margin-medium-bottom">
+                                <h3 class="heading_c uk-margin-bottom">Alerts</h3>
+                                <ul class="md-list md-list-addon">
+                                    <li ng-repeat="alert in user_data.alerts">
+                                        <div class="md-list-addon-element">
+                                            <i class="md-list-addon-icon material-icons uk-text-warning" ng-if="alert.type == 'warning'">&#xE8B2;</i>
+                                            <i class="md-list-addon-icon material-icons uk-text-success" ng-if="alert.type == 'success'">&#xE88F;</i>
+                                            <i class="md-list-addon-icon material-icons uk-text-danger" ng-if="alert.type == 'danger'">&#xE001;</i>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading">{{alert.title}}</span>
+                                            <span class="uk-text-small uk-text-muted uk-text-truncate">{{alert.content}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="heading_c uk-margin-bottom">Friends</h3>
+                            <ul class="md-list md-list-addon uk-margin-bottom">
+                                <li ng-repeat="friend in user_data.friends">
+                                    <div class="md-list-addon-element">
+                                        <img class="md-user-image md-list-addon-avatar" ng-src="{{friend.avatar}}" alt=""/>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">{{friend.name}}</span>
+                                        <span class="uk-text-small uk-text-muted">{{friend.status}}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a class="md-btn md-btn-flat md-btn-flat-primary" href="#">Show all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

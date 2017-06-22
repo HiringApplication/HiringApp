@@ -1,0 +1,46 @@
+ <style type="text/css">
+body{
+    padding-top: 0px!important;
+}
+.wizard > .steps > ul > li a, .wizard > .steps > ul > li a:active, .wizard > .steps > ul > li a:hover {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    
+   
+}
+.wizard > .steps > ul > li a {
+    position: relative;
+    color: #fff;
+    background-color: blue;
+    
+}
+ </style>
+    <div> 
+         <div class="uk-width-large-1-1">
+                   
+                          <img ng-src="assets/img/avatars/user.png"><!--logo -->
+                  
+                </div>
+      
+        <div id="page_content_inner">
+            <div class="uk-grid" data-uk-grid-margin data-uk-grid-match id="user_profile">
+                  <div class="uk-width-large-1-1">
+                    <div class="md-card uk-margin-large-bottom">
+                         <div class="md-card-content">
+                            <form id="wizard_advanced_form" class="uk-form-stacked">
+                                  <wizard class="uk-width-large-1-1" on-finish="finishedWizard()" template="app/templates/wizard.tpl.html">
+                                      <wz-step class="uk-width-large-1-1" wz-title="Peraonal details" template="app/templates/wizard.step.tpl.html">
+                                        </wz-step>
+                                        <wz-step wz-title="Peraonal details" template="app/templates/wizard.step.tpl.html">
+                                        </wz-step>
+                                        <wz-step wz-title="Peraonal details" template="app/templates/wizard.step.tpl.html">
+                                        </wz-step>
+                                  </wizard>
+                            </form>
+                         </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

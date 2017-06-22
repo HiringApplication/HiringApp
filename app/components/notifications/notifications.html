@@ -1,0 +1,30 @@
+<div id="page_content">
+    <div id="page_content_inner" id="login_form">
+
+        <h3 class="heading_b uk-margin-bottom">Current Job Openings</h3>
+
+        <div class="pricing_table pricing_table_a uk-grid uk-grid-small uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-margin-large-bottom" data-uk-grid-margin data-uk-grid-match="{target:'.md-card-content'}" id="notifications">
+            <div ng-repeat="job in jobs">
+                <div class="md-card" >
+                    <div class="md-card-content padding-reset">
+                        <div class="pricing_table_plan md-color-white" style="background-color: {{job.card_color}}">{{job.title}}</div>
+                        <ul class="pricing_table_features">
+                            <li>Job Title</li>
+                            <li><strong>{{job.title}}</strong></li>
+                            <li>Eligibility</li>
+                            <li><strong>{{job.eligibility}}</strong></li>
+                            <li>Experience</li>
+                            <li><strong>{{job.experience}}years</strong></li>
+                            <li>Location</li>
+                            <li><strong>{{job.location}}</strong></li>
+                        </ul>
+                        <div class="pricing_table_select">
+                            <a ui-sref="restricted.notifications.notifications_details({ jobId: job.item_id })"  class="md-btn md-btn-primary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

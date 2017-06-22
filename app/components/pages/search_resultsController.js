@@ -78,7 +78,7 @@ angular
                     {
                         title: 'Icons',
                         link: 'restricted.components.icons',
-                        image: 'assets/img/gallery/Image12.jpg'
+                        image: 'assets/img/avatars/profile.png'
                     },
                     {
                         title: 'Lightbox/Modal',

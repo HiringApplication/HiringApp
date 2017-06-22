@@ -14,8 +14,8 @@
     {
         "language": "javascript",
         "title": "Equal height columns",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, consectetur deserunt fuga fugiat ipsum minima nisi perspiciatis reiciendis tenetur veritatis.",
-        "content": "var maxheight = 0;\n$(\"div.col\").each(function(){\n  if($(this).height() > maxheight) { maxheight = $(this).height(); }\n});\n\n$(\"div.col\").height(maxheight);"
+        "description": "inima nisi perspiciatis reiciendis tenetur veritatis.",
+        "content": "assets\/img\/ecommerce\/web.png"
     },
     {
         "language": "css",

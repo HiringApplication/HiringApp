@@ -8,6 +8,7 @@ var altairApp = angular.module('altairApp', [
     'oc.lazyLoad',
     'ngSanitize',
     'ngRetina',
+    'ngStorage',
     'ncy-angular-breadcrumb',
     'ConsoleLogger'
 ]);

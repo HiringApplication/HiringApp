@@ -1,0 +1,67 @@
+[
+    {
+        "id": "1",
+        "questions": "30",
+        "categoryname" : "HTML & CSS",
+        "status" : "Enabled",
+        "gender": "Male",
+        "photo": "assets/img/others/web.png",
+        "form_dynamic" :"sdfsdfsdf"
+        
+    },
+    {
+        "id": "2",
+        "questions": "20",
+        "categoryname" : "JavaScript",
+        "status" : "Disabled",
+        "photo": "assets/img/others/html5-css-javascript-logos.png",
+        "form_dynamic": ""
+        
+    },
+    {
+        "id": "3",
+        "questions": "20",
+        "categoryname" : "Jquery",
+        "status" : "Enabled",
+        "photo": "assets/img/others/jquery.jpg",
+        "form_dynamic": ""
+        
+    },
+    {
+        "id": "4",
+        "questions": "20",
+        "categoryname" : "PHP & MySql",
+        "status" : "Enabled",
+        "photo": "assets/img/others/php.jpg",
+        "form_dynamic" :""
+        
+    },
+    {
+        "id": "5",
+        "questions": "20",
+        "categoryname" : "Angular JS",
+        "status" : "Enabled",
+        "photo": "assets/img/others/angular.png",
+        "form_dynamic": ""
+        
+    },
+    {
+        "id": "6",
+        "questions": "20",
+        "categoryname" : "Codeigniter",
+        "status" : "Disabled",
+        "photo": "assets/img/others/codeigniter.jpg",
+        "form_dynamic" :""
+        
+    },
+    {
+        "id": "7",
+        "questions": "20",
+        "categoryname" : "Android",
+        "status" : "Enabled",
+        "photo": "assets/img/others/android.png",
+        "form_dynamic" :""
+        
+    }
+    
+]

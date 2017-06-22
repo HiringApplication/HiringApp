@@ -1,0 +1,724 @@
+<div id="page_content">
+
+    <div id="page_heading" data-uk-sticky="{ top: 48, media: 960 }">
+        <div class="heading_actions">
+             
+             <!-- <a href="#" data-uk-tooltip="{pos:'bottom'}" title="Save"><i class="md-icon material-icons">&#xE161;</i></a> -->
+             <a href="#" data-uk-tooltip="{pos:'bottom'}" title="Delete"><i class="md-icon material-icons">&#xE872;</i></a>
+            <!-- <a href="#" data-uk-tooltip="{pos:'bottom'}" title="Archive"><i class="md-icon material-icons">&#xE149;</i></a>
+            <a href="#" data-uk-tooltip="{pos:'bottom'}" title="Print"><i class="md-icon material-icons">&#xE8AD;</i></a>
+            <div data-uk-dropdown>
+                <i class="md-icon material-icons">&#xE5D4;</i>
+                <div class="uk-dropdown uk-dropdown-small">
+                    <ul class="uk-nav">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Other Action</a></li>
+                        <li><a href="#">Other Action</a></li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+        <h1>{{profile_details.name}}</h1>
+        <!-- <span class="uk-text-upper uk-text-small"><a href="#">{{project_name}}</a> / <a href="#">{{issue_details.short_name}}-{{issue_details.item_id}}</a></span> -->
+    </div>
+
+<div id="page_content_inner">
+
+        <div class="uk-grid uk-grid-medium" data-uk-grid-margin>
+            <div class="uk-width-xLarge-2-10 uk-width-large-3-10">
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Photo
+                        </h3>
+                    </div>
+                    <div class="md-card-content">
+                        <div class="uk-margin-bottom uk-text-center">
+                            <img ng-src="{{profile_details.photo}}" alt="" class="img_medium" />
+                        </div>
+                        <ul class="uk-grid uk-grid-width-small-1-3 uk-text-center" data-uk-grid-margin>
+                            <li ng-repeat="image in issue.photo">
+                                <img ng-src="{{image}}" alt="" class="img_small"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+
+                
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right">
+                                <input type="checkbox" ui-switch ng-model="product.active" name="product_edit_active_control" id="product_edit_active_control" />
+                            </div>
+                            <label class="uk-display-block uk-margin-small-top" for="product_edit_active_control">Assessment Approval</label>
+                        </div>
+                    </div>
+                
+
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Online Assessment Scores
+                        </h3>
+                    </div>
+                    <div class="md-card-content">
+                    <div class="uk-width-large-1-1">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-2-3">
+                                        <span class="uk-text-muted uk-text-small">Total Questions</span>
+                                    </div>
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-large uk-text-middle uk-text-large uk-text-success">{{profile_details.total_q}}</span>
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-2-3">
+                                        <span class="uk-text-muted uk-text-small">Questions Answered</span>
+                                    </div>
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-large uk-text-middle uk-text-large uk-text-success">{{profile_details.q_answered}}</span>
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-2-3">
+                                        <span class="uk-text-muted uk-text-small">Correct Answered</span>
+                                    </div>
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-large uk-text-middle uk-text-large uk-text-success">{{profile_details.correct_answers}}</span>
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-2-3">
+                                        <span class="uk-text-muted uk-text-small">Wrong Answered</span>
+                                    </div>
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-large uk-text-middle uk-text-large uk-text-success">{{profile_details.q_wrong}}</span>
+                                    </div>
+                                </div>
+                                
+                                
+                                </div>
+                        <!-- <ul class="md-list">
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">First Round</span>
+                                    <span class="md-list-heading uk-text-large uk-text-success">{{issue_details.p_firstround}}%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">Second Round</span>
+                                    <span class="md-list-heading uk-text-large uk-text-success">{{issue_details.p_secondround}}%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">Third Round</span>
+                                    <span class="md-list-heading uk-text-large uk-text-success">{{issue_details.p_thirdround}}%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small  uk-display-block"><strong>Overall Performance</strong></span>
+                                    <span class="md-list-heading uk-text-large uk-text-success">{{issue_details.p_overall}}%</span>
+                                </div>
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Status
+                        </h3>
+                    </div>
+                    <div class="md-card-content">
+                       
+                                <div class="md-list-content">
+                                    <!-- <span class="uk-text-small uk-text-muted uk-display-block">Programming Languages</span>
+                                    <span class="md-list-heading uk-text-large ">{{product.prog_languages}}</span> -->
+                                    <div class="uk-width-medium-2-5">
+                                <p >
+
+                                    <input type="radio" name="radio_demo" id="radio_demo_1" icheck ng-model="radio_demo" value="radio_1" />
+                                    <label for="radio_demo_1" class="inline-label" >1st Round</label>
+                                </p>
+                                <p>
+                                    <i><input type="radio" name="radio_demo" id="radio_demo_2" icheck ng-model="radio_demo" value="radio_2" /></i>
+                                    <label for="radio_demo_2" class="inline-label">2nd Round</label>
+                                </p>
+                                <p>
+                                    <input type="radio" name="radio_demo" id="radio_demo_3" icheck ng-model="radio_demo" value="radio_3"  />
+                                    <label for="radio_demo_3" class="inline-label">3rd Round</label>
+                                </p>
+                                <p>
+                                    <input type="radio" name="radio_demo" id="radio_demo_4" icheck ng-model="radio_demo" value="radio_4" ng-checked="true" />
+                                    <label for="radio_demo_4" class="inline-label">Selected</label>
+                                </p>
+                                <p>
+                                    <input type="radio" name="radio_demo" id="radio_demo_5" icheck ng-model="radio_demo" value="radio_5" ng-checked="true" />
+                                    <label for="radio_demo_5" class="inline-label">Rejected</label>
+                                </p>
+                            </div>
+                                </div>
+                            
+                            <!-- <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">Certificate Courses</span>
+                                    <span class="md-list-heading uk-text-large">{{product.certificate_courses}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">Other Skills</span>
+                                    <span class="md-list-heading uk-text-large">{{product.other_skills}}</span>
+                                </div>
+                            </li> -->
+                            <!-- <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">SKU</span>
+                                    <span class="md-list-heading uk-text-large">{{product.sku}}</span>
+                                </div>
+                            </li> -->
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="uk-width-xLarge-8-10  uk-width-large-7-10">
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Personal Details
+                        </h3>
+                    </div>
+                    <div class="md-card-content large-padding">
+                        <div class="uk-grid uk-grid-divider uk-grid-medium">
+                            <div class="uk-width-large-1-2">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Name</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        <span class="uk-text-large uk-text-middle">{{profile_details.name}}</span>
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Address</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.address}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">City</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.city}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Pincode</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.pincode}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Father's Name</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.f_name}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Mother's Name</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.m_name}}
+                                    </div>
+                                </div>
+                                
+                                <!-- <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">DOB</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{product.contact}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider uk-hidden-large">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Father Name</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{product.contact}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider uk-hidden-large">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Mother Name</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{product.contact}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider uk-hidden-large">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Religion</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{product.contact}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider uk-hidden-large">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Contact</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{product.contact}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider uk-hidden-large"> -->
+                            </div>
+                            <div class="uk-width-large-1-2">
+                                <!-- <p>
+                                    <span class="uk-text-muted uk-text-small uk-display-block uk-margin-small-bottom">Current Location</span>
+                                    <span class="uk-badge uk-margin-small-right" ng-class="{'uk-badge-success': $index != 1, 'uk-badge-primary': $index == 1}" ng-repeat="tag in product.tags">{{tag}}</span>
+                                </p> -->
+                                 <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Current Location</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.current_location}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Religion</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.religion}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">DOB</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.dob}}
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-3">
+                                        <span class="uk-text-muted uk-text-small">Nationality</span>
+                                    </div>
+                                    <div class="uk-width-large-2-3">
+                                        {{profile_details.nationality}}
+                                    </div>
+                                </div>
+                                 <hr class="uk-grid-divider">
+                                <p>
+                                    <span class="uk-text-muted uk-text-small uk-display-block uk-margin-small-bottom">Resume</span>
+                                    <!-- {{product.description}} -->
+                                    <div class="uk-form-file md-btn md-btn-primary">
+                                     View Resume
+                                    <input id="form-file" class="ng-pristine ng-untouched ng-valid ng-empty" ng-model="file_upload.input_2" type="file">
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Educational Details
+                        </h3>
+                    </div>
+                    <div class="md-card-content large-padding">
+                        <div class="uk-grid uk-grid-divider uk-grid-medium">
+                            <div class="uk-width-large-1-1">
+                                <table class="uk-table">
+                           <!--  <caption>Table caption</caption> -->
+                            <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Institute Name</th>
+                                <th>Percentage/CGPA</th>
+                                <th>Year Of Passing</th>
+                            </tr>
+                            </thead>
+                            <!-- <tfoot>
+                            <tr>
+                                <td>Table Footer</td>
+                                <td>Table Footer</td>
+                                <td>Table Footer</td>
+                            </tr>
+                            </tfoot> -->
+                            <tbody>
+                            <tr>
+                                <td>Secondary</td>
+                                <td>{{profile_details.secondary_edu}}</td>
+                                <td>{{profile_details.marks_secondary}}%</td>
+                                <td>{{profile_details.secondary_batch}}</td>
+                            </tr>
+                            <tr>
+                                <td>Higher Secondary</td>
+                                <td>{{profile_details.hsc}}</td>
+                                <td>{{profile_details.marks_hsc}}%</td>
+                                <td>{{profile_details.hsc_batch}}</td>
+                            </tr>
+                            <tr>
+                                <td>U.G</td>
+                                <td>{{profile_details.ug}}</td>
+                                <td>{{profile_details.marks_ug}}</td>
+                                <td>{{profile_details.ug_batch}}</td>
+                            </tr>
+                            <tr>
+                                <td>P.G</td>
+                                <td>{{profile_details.pg}}</td>
+                                <td>{{profile_details.marks_pg}}</td>
+                                <td>{{profile_details.pg_batch}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Working Experience
+                        </h3>
+                    </div>
+                    <div class="md-card-content large-padding">
+                        <div class="uk-grid uk-grid-divider uk-grid-medium">
+                            <div class="uk-width-large-1-1">
+                                <table class="uk-table">
+                            <!-- <caption>Working Experience</caption> -->
+                            <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Role</th>
+                                <th>Duration</th>
+                            </tr>
+                            </thead>
+                            <!-- <tfoot>
+                            <tr>
+                                <td>Table Footer</td>
+                                <td>Table Footer</td>
+                                <td>Table Footer</td>
+                            </tr>
+                            </tfoot> -->
+                            <tbody>
+                            <tr>
+                                <td>{{profile_details.company_1}}</td>
+                                <td>{{profile_details.role_1}}</td>
+                                <td>{{profile_details.duration_1}}years</td>
+                            </tr>
+                            <tr>
+                                <td>{{profile_details.company_2}}</td>
+                                <td>{{profile_details.role_2}}</td>
+                                <td>{{profile_details.duration_2}}years</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Skills
+                        </h3>
+                    </div>
+                    <div class="md-card-content">
+                    <div class="uk-width-large-1-1">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-2">
+                                        <span class="uk-text-muted uk-text-small">Programming Languages</span>
+                                    </div>
+                                    <div class="uk-width-large-1-2">
+                                        <span class="uk-text-large uk-text-middle uk-text-large ">{{profile_details.programming_lang}}</span>
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-2">
+                                        <span class="uk-text-muted uk-text-small">Certificate Courses</span>
+                                    </div>
+                                    <div class="uk-width-large-1-2">
+                                        <span class="uk-text-large uk-text-middle uk-text-large ">{{profile_details.certificate_courses}}</span>
+                                    </div>
+                                </div>
+                                <hr class="uk-grid-divider">
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-large-1-2">
+                                        <span class="uk-text-muted uk-text-small">Other Skills</span>
+                                    </div>
+                                    <div class="uk-width-large-1-2">
+                                        <span class="uk-text-large uk-text-middle uk-text-large ">{{profile_details.other_skills}}</span>
+                                    </div>
+                                </div>
+                                
+                                
+                                </div>
+
+                <!-- <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Skills
+                        </h3>
+                    </div>
+                    <div class="md-card-content">
+                        <ul class="md-list">
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">Programming Languages</span>
+                                    <span class="md-list-heading uk-text-large ">{{issue_details.programming_lang}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">Certificate Courses</span>
+                                    <span class="md-list-heading uk-text-large">{{issue_details.certificate_courses}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">Other Skills</span>
+                                    <span class="md-list-heading uk-text-large">{{issue_details.other_skills}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-content">
+                                    <span class="uk-text-small uk-text-muted uk-display-block">SKU</span>
+                                    <span class="md-list-heading uk-text-large">{{product.sku}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> -->
+               <!--  <div class="md-card">
+                    <div class="md-card-toolbar">
+                        <h3 class="md-card-toolbar-heading-text">
+                            Options
+                        </h3>
+                    </div>
+                    <div class="md-card-content large-padding">
+                        <div class="uk-grid" data-uk-grid-margin ng-repeat="group in product.options">
+                            <div class="uk-width-medium-2-10">
+                                <span class="uk-display-block uk-margin-small-top uk-text-large">{{group.group_name}}</span>
+                            </div>
+                            <div class="uk-width-medium-8-10">
+                                <table class="uk-table">
+                                    <thead>
+                                    <tr>
+                                        <th class="uk-width-4-10">{{group.option_th}}</th>
+                                        <th class="uk-width-3-10">In stock</th>
+                                        <th class="uk-width-3-10 uk-text-right">Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="option in group.items">
+                                            <td>{{option.name}}</td>
+                                            <td>
+                                                <i class="material-icons uk-text-success md-24" ng-if="option.in_stock">&#xE834;</i>
+                                                <i class="material-icons md-24" ng-if="!option.in_stock">&#xE835;</i>
+                                            </td>
+                                            <td class="uk-text-right">{{option.difference}} {{option.price | currency : "$" : 2}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+   <!--  <div id="page_content_inner">
+
+        <div class="md-card">
+            <div class="md-card-content">
+                <div class="uk-margin-bottom" data-uk-margin>
+                    <a href="#" class="md-btn"><i class="material-icons">&#xE254;</i> Edit</a>
+                    <div class="md-btn-group">
+                        <a class="md-btn" href="#">Assign</a>
+                        <a href="#" class="md-btn">Start Progress</a>
+                        <a href="#" class="md-btn">Close Issue</a>
+                    </div>
+                </div>
+                <hr/>
+                <div class="uk-grid uk-grid-divider" data-uk-grid-margin>
+                    <div class="uk-width-medium-3-4">
+                        <div class="uk-margin-large-bottom">
+                            <h2 class="heading_c uk-margin-small-bottom">Description</h2>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur blanditiis deserunt dolorem doloremque in nostrum quaerat voluptates. Natus, quos voluptatibus. Amet earum ipsa maiores, praesentium quos saepe similique ut.
+<pre class="line-numbers"><code class="language-javascript" prism-highlight>// Generate parameters to create a standard animation
+function genFx( type, includeWidth ) {
+    var which,
+    i = 0,
+    attrs = { height: type };
+    // If we include width, step value is 1 to do all cssExpand values,
+    // otherwise step value is 2 to skip over Left and Right
+    includeWidth = includeWidth ? 1 : 0;
+    for ( ; i < 4 ; i += 2 - includeWidth ) {
+        which = cssExpand[ i ];
+        attrs[ "margin" + which ] = attrs[ "padding" + which ] = type;
+    }
+    if ( includeWidth ) {
+        attrs.opacity = attrs.width = type;
+    }
+    return attrs;
+}</code></pre>
+                        </div>
+                        <div class="uk-margin-large-bottom">
+                            <h2 class="heading_c uk-margin-small-bottom">Comments</h2>
+                            <ul class="uk-comment-list">
+                                <li>
+                                    <article class="uk-comment">
+                                        <header class="uk-comment-header">
+                                            <img class="md-user-image uk-comment-avatar" src="assets/img/avatars/avatar_05_tn.png" alt="">
+                                            <h4 class="uk-comment-title">Carlee Barrows</h4>
+                                            <div class="uk-comment-meta">24/Jun/15 14:26</div>
+                                        </header>
+                                        <div class="uk-comment-body">
+                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                        </div>
+                                    </article>
+                                    <ul>
+                                        <li>
+                                            <article class="uk-comment">
+                                                <header class="uk-comment-header">
+                                                    <img class="md-user-image uk-comment-avatar" src="assets/img/avatars/avatar_02_tn.png" alt="">
+                                                    <h4 class="uk-comment-title">Delfina Champlin</h4>
+                                                    <div class="uk-comment-meta">24/Jun/15 14:26</div>
+                                                </header>
+                                                <div class="uk-comment-body">
+                                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                                </div>
+                                            </article>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <article class="uk-comment">
+                                        <header class="uk-comment-header">
+                                            <img class="md-user-image uk-comment-avatar" src="assets/img/avatars/avatar_08_tn.png" alt="">
+                                            <h4 class="uk-comment-title">Sandra Flatley</h4>
+                                            <div class="uk-comment-meta">24/Jun/15 14:26</div>
+                                        </header>
+                                        <div class="uk-comment-body">
+                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="uk-comment">
+                                        <header class="uk-comment-header">
+                                            <img class="md-user-image uk-comment-avatar" src="assets/img/avatars/avatar_07_tn.png" alt="">
+                                            <h4 class="uk-comment-title">Leonel Hettinger</h4>
+                                            <div class="uk-comment-meta">24/Jun/15 14:26</div>
+                                        </header>
+                                        <div class="uk-comment-body">
+                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+                        <textarea cols="30" rows="4" class="md-input" placeholder="Add Comment..." md-input></textarea>
+                        <a href="#" class="md-btn uk-margin-top">Add Comment</a>
+                    </div>
+                    <div class="uk-width-medium-1-4">
+                        <div class="uk-margin-medium-bottom">
+                            <p>
+                                Priority:
+                                <span class="uk-text-upper uk-margin-small-left uk-badge" ng-class="{
+                                    'uk-badge-success':issue_details.priority == 'minor',
+                                    'uk-badge-info':issue_details.priority == 'major',
+                                    'uk-badge-warning':issue_details.priority == 'critical',
+                                    'uk-badge-danger':issue_details.priority == 'blocker'
+                                    }">
+                                    {{issue_details.priority}}
+                                </span>
+                            </p>
+                            <p>
+                                Status:
+                                <span class="uk-badge uk-badge-outline uk-text-upper uk-margin-small-left">{{issue_details.status}}</span>
+                            </p>
+                        </div>
+                        <h2 class="heading_c uk-margin-small-bottom">Details</h2>
+                        <ul class="md-list md-list-addon">
+                            <li>
+                                <div class="md-list-addon-element">
+                                    <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_02_tn.png" alt=""/>
+                                </div>
+                                <div class="md-list-content">
+                                    <span class="md-list-heading">{{issue_details.assignee}}</span>
+                                    <span class="uk-text-small uk-text-muted">Assignee</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-addon-element">
+                                    <i class="md-list-addon-icon material-icons">&#xE8DF;</i>
+                                </div>
+                                <div class="md-list-content">
+                                    <span class="md-list-heading">{{issue_details.date_created}}</span>
+                                    <span class="uk-text-small uk-text-muted">Created</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="md-list-addon-element">
+                                    <i class="md-list-addon-icon material-icons">&#xE8B5;</i>
+                                </div>
+                                <div class="md-list-content">
+                                    <span class="md-list-heading">{{issue_details.date_updated}}</span>
+                                    <span class="uk-text-small uk-text-muted">Updated</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+</div>
