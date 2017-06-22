@@ -5,7 +5,13 @@ angular
         '$scope',
         '$window',
         '$state',
-        function ($timeout,$scope,$window,$state) {
+        '$location',
+        function ($timeout,$scope,$window,$state,$location) {
+
+
+            if ($location.path()=="/layout/registerpage") {
+                $scope.hideurl=true;
+            }
 
             $scope.user_data = {
                 name: "Lue Feest",
